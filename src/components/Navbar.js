@@ -16,16 +16,16 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <a href="#home" className="text-gray-500 hover:text-gray-400">
+          <a href="#home" className="text-black hover:text-red-800">
             Home
           </a>
-          <a href="#about" className="text-gray-500 hover:text-gray-400">
+          <a href="#about" className="text-black hover:text-red-800">
             About
           </a>
-          <a href="#services" className="text-gray-500 hover:text-gray-400">
+          <a href="#services" className="text-black hover:text-red-800">
             Services
           </a>
-          <a href="#contact" className="text-gray-500 hover:text-gray-400">
+          <a href="#contact" className="text-black hover:text-red-800">
             Contact
           </a>
         </div>
