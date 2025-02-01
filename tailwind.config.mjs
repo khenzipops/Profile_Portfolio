@@ -1,3 +1,5 @@
+import { Poppins } from "next/font/google";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins"],
+        roboto: ["Roboto"],
+      },
       colors: {
         customBg: "#bfdbfe",
       },
