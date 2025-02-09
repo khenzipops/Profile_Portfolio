@@ -27,10 +27,10 @@ function Navbar() {
             About
           </a>
           <a
-            href="#services"
+            href="/project"
             className="text-white hover:text-black font-poppins"
           >
-            Services
+            Project
           </a>
           <a
             href="#contact"

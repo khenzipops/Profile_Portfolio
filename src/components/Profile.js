@@ -11,7 +11,7 @@ function Profile() {
       </h2>
       <div>
         <Link
-          href="/about"
+          href="/project"
           className="px-4 sm:px-6 py-2 sm:py-3 text-white bg-orange rounded-2xl shadow-md hover:bg-orangeDp transition-all text-sm sm:text-base "
         >
           View Project
