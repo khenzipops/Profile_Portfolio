@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,23 +10,32 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-blue-200	 p-4">
+    <nav
+      className="bg-orange
+	 p-4"
+    >
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold beauRivage">Khenz</div>
+        <div className="text-2xl font-bold beauRivage text-white">Khenz</div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <a href="#home" className="text-black hover:text-red-800">
+          <Link href="/" className="text-white hover:text-black">
             Home
-          </a>
-          <a href="#about" className="text-black hover:text-red-800">
+          </Link>
+          <a href="#about" className="text-white hover:text-black font-poppins">
             About
           </a>
-          <a href="#services" className="text-black hover:text-red-800">
+          <a
+            href="#services"
+            className="text-white hover:text-black font-poppins"
+          >
             Services
           </a>
-          <a href="#contact" className="text-black hover:text-red-800">
+          <a
+            href="#contact"
+            className="text-white hover:text-black font-poppins"
+          >
             Contact
           </a>
         </div>

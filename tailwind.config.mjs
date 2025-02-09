@@ -15,6 +15,9 @@ export default {
       },
       colors: {
         customBg: "#bfdbfe",
+        orange: "#ff7043",
+        teal: "#FAFAFA",
+        orangeDp: "#F4511E",
       },
     },
   },
