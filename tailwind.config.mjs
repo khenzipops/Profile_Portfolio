@@ -9,12 +9,16 @@ export default {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        customR: "100px",
+      },
       fontFamily: {
         poppins: ["Poppins"],
         roboto: ["Roboto"],
       },
       colors: {
-        customBg: "#bfdbfe",
+        customBg: "#884a39",
+        brownBg: "#c38154",
         orange: "#ff7043",
         teal: "#FAFAFA",
         orangeDp: "#F4511E",
