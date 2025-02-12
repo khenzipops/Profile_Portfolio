@@ -2,7 +2,10 @@
 
 function Contact() {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mt-10">
+    <div
+      id="contact"
+      className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mt-10"
+    >
       <h2 className="text-xl font-semibold text-center text-gray-800 mb-4">
         Contact Us
       </h2>

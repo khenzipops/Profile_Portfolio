@@ -10,96 +10,88 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-customBg p-4 shadow-md">
-      <div className="container mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <div className="text-2xl font-bold beauRivage text-white">Khenz</div>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
-          <Link href="/" className="text-white hover:text-gray-300 transition">
-            Home
-          </Link>
-          <Link
-            href="/bio"
-            className="text-white hover:text-gray-300 transition"
-          >
-            About
-          </Link>
-          <Link
-            href="/project"
-            className="text-white hover:text-gray-300 transition"
-          >
-            Project
-          </Link>
-          <Link
-            href="#contact"
-            className="text-white hover:text-gray-300 transition"
-          >
-            Contact
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button className="md:hidden text-white" onClick={toggleMenu}>
-          {isOpen ? (
-            <svg
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden mt-4 space-y-4 bg-customBg p-4 rounded-lg shadow-lg">
+    <nav className="bg-mainColor p-4 shadow-2xl bg-opacity-80">
+      <div className="container mx-auto flex justify-between items-center">
+        <span className="text-lg font-bold font-mmd text-white cursor-pointer">
+          Khenz
+        </span>
+        <div className="hidden md:flex space-x-12">
           <Link
             href="/"
-            className="block text-white hover:text-gray-300 transition"
+            className="text-1xl relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
-            Home
+            HOME
           </Link>
           <Link
             href="/bio"
-            className="block text-white hover:text-gray-300 transition"
+            className="text-1xl relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
-            About
+            ABOUT
           </Link>
           <Link
             href="/project"
-            className="block text-white hover:text-gray-300 transition"
+            className="text-1xl relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
-            Project
+            PROJECT
           </Link>
           <Link
-            href="#contact"
-            className="block text-white hover:text-gray-300 transition"
+            href="/bio#contact"
+            className="relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
-            Contact
+            CONTACT
+          </Link>
+        </div>
+        <div className="md:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      {isOpen && (
+        <div className="md:hidden mt-4 space-y-2">
+          <Link
+            href="/"
+            className="block text-white text-center py-2"
+            onClick={toggleMenu}
+          >
+            HOME
+          </Link>
+          <Link
+            href="/bio"
+            className="block text-white text-center py-2"
+            onClick={toggleMenu}
+          >
+            ABOUT
+          </Link>
+          <Link
+            href="/project"
+            className="block text-white text-center py-2"
+            onClick={toggleMenu}
+          >
+            PROJECT
+          </Link>
+          <Link
+            href="/bio#contact"
+            className="block text-white text-center py-2"
+            onClick={toggleMenu}
+          >
+            CONTACT
           </Link>
         </div>
       )}

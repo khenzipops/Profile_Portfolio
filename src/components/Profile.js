@@ -12,7 +12,7 @@ function Profile() {
       <div>
         <Link
           href="/project"
-          className="px-4 sm:px-6 py-2 sm:py-3 text-white bg-customBg rounded-2xl shadow-md hover:bg-brownBg transition-all text-sm sm:text-base "
+          className="px-4 sm:px-6 py-2 sm:py-3 text-white bg-customBg rounded-2xl hover:bg-brownBg transition-all text-sm sm:text-base drop-shadow-lg "
         >
           View Project
         </Link>
