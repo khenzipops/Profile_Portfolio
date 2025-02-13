@@ -22,7 +22,9 @@ export default function Home() {
 
       {/* Start ME */}
       <div id="bio" className="bg-secondaryColor p-3">
-        <h1 className="text-2xl border-l-4 border-mainColor p-2">ME</h1>
+        <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold">
+          ME
+        </h1>
         <div className="flex flex-col md:flex-row w-full h-auto p-6 bg-secondaryColor">
           <div className="bg-secondaryColor w-full p-3 flex justify-center items-center">
             <img
@@ -39,7 +41,7 @@ export default function Home() {
 
       {/* Start ProjectCard */}
       <div id="project" className="mt-4 md:mt-8">
-        <h1 className="text-2xl border-l-4 border-mainColor p-2 ml-3">
+        <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold ml-3">
           PROJECT
         </h1>
         <div className="p-4 md:p-8">
@@ -49,7 +51,7 @@ export default function Home() {
 
       {/* Technical Skills */}
       <div className="bg-secondaryColor  p-3">
-        <h1 className="text-2xl border-l-4 border-mainColor p-2 h-2/4">
+        <h1 className="text-3xl border-l-4 border-mainColor  font-roboto font-semibold p-2 mb-2">
           TECHNICAL SKILL
         </h1>
         <div className="p-4 ">
@@ -59,7 +61,7 @@ export default function Home() {
 
       {/* CONTACT US */}
       <div className=" p-3  ">
-        <h1 className="text-2xl border-l-4 border-mainColor p-2 h-2/4">
+        <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold">
           CONTACT
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-42 gap-4 items-center">
