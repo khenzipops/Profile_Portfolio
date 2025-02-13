@@ -3,6 +3,7 @@ import Details from "@/components/Details";
 import ProjectCard from "@/components/ProjectCard";
 import Contact from "@/components/Contact";
 import TechnicalSkills from "@/components/TechnicalSkills";
+import ContactText from "@/components/ContactText";
 
 export default function Home() {
   return (
@@ -25,9 +26,7 @@ export default function Home() {
             <img
               src="/assets/photo_white.png"
               alt="Profile Photo"
-              height={250}
-              width={250}
-              className="rounded-full h-[250px] w-[250px]"
+              className="rounded-full max-w-full h-auto object-cover"
             />
           </div>
           <div className="bg-secondaryColor text-xl md:text-xl  md:border-l-8 border-mainColor mt-6 md:mt-0 md:ml-6 p-5 md:p-6">
@@ -61,8 +60,13 @@ export default function Home() {
         <h1 className="text-2xl border-l-4 border-mainColor p-2 h-2/4">
           CONTACT
         </h1>
-        <div>
-          <Contact />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-42 gap-4 items-center">
+          <div className="flex justify-center">
+            <ContactText />
+          </div>
+          <div>
+            <Contact />
+          </div>
         </div>
       </div>
       {/* END */}
