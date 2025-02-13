@@ -19,7 +19,7 @@ export default function Home() {
       </div>
 
       {/* Start ME */}
-      <div className="bg-secondaryColor p-3">
+      <div id="bio" className="bg-secondaryColor p-3">
         <h1 className="text-2xl border-l-4 border-mainColor p-2">ME</h1>
         <div className="flex flex-col md:flex-row w-full h-auto p-6 bg-secondaryColor">
           <div className="bg-secondaryColor w-full p-3 flex justify-center items-center">
@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       {/* Start ProjectCard */}
-      <div className="mt-4 md:mt-8">
+      <div id="project" className="mt-4 md:mt-8">
         <h1 className="text-2xl border-l-4 border-mainColor p-2 ml-3">
           PROJECT
         </h1>

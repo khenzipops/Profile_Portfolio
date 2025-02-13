@@ -23,19 +23,19 @@ function Navbar() {
             HOME
           </Link>
           <Link
-            href="/bio"
+            href="#bio"
             className="text-1xl relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             ABOUT
           </Link>
           <Link
-            href="/project"
+            href="#project"
             className="text-1xl relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             PROJECT
           </Link>
           <Link
-            href="/bio#contact"
+            href="#contact"
             className="relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             CONTACT
@@ -87,8 +87,8 @@ function Navbar() {
             PROJECT
           </Link>
           <Link
-            href="/bio#contact"
-            className="block text-white text-center py-2"
+            href="/contact"
+            className="block text-white text-center py-2 cursor-pointer"
             onClick={toggleMenu}
           >
             CONTACT

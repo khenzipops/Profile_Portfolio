@@ -4,7 +4,7 @@ function Contact() {
   return (
     <div
       id="contact"
-      className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mt-10"
+      className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mt-10 border-mainColor border-2"
     >
       <h2 className="text-xl font-semibold text-center text-gray-800 mb-4">
         Contact Us
@@ -22,7 +22,7 @@ function Contact() {
             type="text"
             id="fullname"
             name="fullname"
-            className="w-full p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 transition duration-300 ease-in-out"
+            className="w-full p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-mainColor transition duration-300 ease-in-out"
           />
         </div>
 
@@ -38,7 +38,7 @@ function Contact() {
             type="email"
             id="email"
             name="email"
-            className="w-full p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 transition duration-300 ease-in-out"
+            className="w-full p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-mainColor transition duration-300 ease-in-out"
           />
         </div>
 
@@ -53,7 +53,7 @@ function Contact() {
           <textarea
             id="message"
             name="message"
-            className="w-full p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 transition duration-300 ease-in-out"
+            className="w-full resize-none p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-mainColor transition duration-300 ease-in-out"
             rows="3"
           ></textarea>
         </div>
@@ -62,7 +62,7 @@ function Contact() {
         <div className="text-center">
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-orange text-white text-sm font-semibold rounded-md hover:bg-orange-600 transition duration-300 ease-in-out"
+            className="w-1/2 py-2 px-4 bg-mainColor border-black text-white text-sm font-semibold rounded-md transition duration-300 ease-in-out"
           >
             Send Message
           </button>
