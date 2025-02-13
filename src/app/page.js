@@ -10,11 +10,12 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="text-center mt-60">
-        <h1 className="font-anton font-semibold text-6xl md:text-8xl cursor-pointer">
+      <div className="relative text-center mt-60 bg-cover bg-center h-screen">
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+        <h1 className="font-anton font-semibold text-6xl md:text-8xl cursor-pointer text-black z-10">
           Hi! I'm <span className="text-mainColor">Kenneth</span>.
         </h1>
-        <h1 className="font-roboto font-medium text-xl md:text-2xl mb-60">
+        <h1 className="font-roboto font-medium text-xl md:text-2xl mb-60 text-black z-10">
           FRONTEND DEVELOPER
         </h1>
       </div>

@@ -10,7 +10,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-mainColor p-4 shadow-2xl bg-opacity-100 fixed top-0 left-0 w-full z-50">
+    <nav className="bg-mainColor p-2 shadow-2xl bg-opacity-100 fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <span className="text-2xl font-bold font-mmd text-white cursor-pointer">
           Khenz
@@ -18,32 +18,32 @@ function Navbar() {
         <div className="hidden md:flex space-x-12">
           <Link
             href="/"
-            className="text-base relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
+            className="text-base relative p-2 text-white  py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             HOME
           </Link>
           <Link
             href="#bio"
-            className="text-base relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
+            className="text-base relative p-2 text-white  py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             ABOUT
           </Link>
           <Link
             href="#project"
-            className="text-base relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
+            className="text-base relative p-2 text-white  py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             PROJECT
           </Link>
           <Link
             href="#contact"
-            className="text-base relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
+            className="text-base relative p-2 text-white py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             CONTACT
           </Link>
 
           <Link
             href="#"
-            className=" bg-red-500 text-base relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
+            className=" bg-red-500 p-2 text-base relative text-white py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             RESUME
           </Link>
