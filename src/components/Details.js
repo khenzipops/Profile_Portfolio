@@ -4,12 +4,16 @@ function Details() {
   return (
     <div className="w-full md:w-fit p-4 md:p-8">
       <p className="text-sm sm:text-base md:text-l lg:text-1xl font-poppins text-black text-justify leading-6 sm:leading-7 md:leading-8 lg:leading-9">
-        I am a Bachelor of Science in Information Technology (BSIT) student with
-        a passion for technology and problem-solving. I enjoy learning about
-        software development, networking, and cybersecurity while continuously
-        improving my skills in coding and IT systems. My goal is to apply my
-        knowledge to real-world projects and contribute to innovative tech
-        solutions.
+        I graduated with a Bachelor of Science in Information Technology (BSIT)
+        in 2021-2022. I was employed as a teacher from 2022 to 2024 at SHS Liceo
+        de Cagayan University. During this time, I nurtured my passion for
+        technology and set my sights on pursuing my dream of creating websites
+        and engaging in tech-related work. With a strong passion for technology
+        and problem-solving, I continually strive to expand my knowledge in
+        software development and networking. I am focused on improving my coding
+        skills and IT systems expertise, and my goal is to apply my knowledge in
+        real-world projects, contributing to innovative tech solutions that make
+        a meaningful impact. solutions.
       </p>
     </div>
   );

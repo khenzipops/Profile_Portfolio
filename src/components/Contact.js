@@ -7,7 +7,7 @@ function Contact() {
       className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mt-10 border-mainColor border-2"
     >
       <h2 className="text-xl font-semibold text-center text-gray-800 mb-4">
-        Contact Us
+        Contact
       </h2>
       <form className="space-y-3">
         {/* Full Name */}
@@ -64,7 +64,7 @@ function Contact() {
             type="submit"
             className="w-1/2 py-2 px-4 bg-mainColor border-black text-white text-sm font-semibold rounded-md transition duration-300 ease-in-out"
           >
-            Send Message
+            Submit
           </button>
         </div>
       </form>
