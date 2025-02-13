@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Navbar />
       <div className="text-center mt-60">
-        <h1 className="font-anton font-semibold text-6xl md:text-8xl cursor-pointer animate-pulse">
+        <h1 className="font-anton font-semibold text-6xl md:text-8xl cursor-pointer">
           Hi! I'm <span className="text-mainColor">Kenneth</span>.
         </h1>
         <h1 className="font-roboto font-medium text-xl md:text-2xl mb-60">

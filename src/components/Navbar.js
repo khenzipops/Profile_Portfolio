@@ -40,7 +40,17 @@ function Navbar() {
           >
             CONTACT
           </Link>
+
+          <Link
+            href="#"
+            className=" bg-red-500 text-base relative text-white px-2 py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
+          >
+            RESUME
+          </Link>
         </div>
+
+        {/* MOBILE VIEW */}
+
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
@@ -92,6 +102,13 @@ function Navbar() {
             onClick={toggleMenu}
           >
             CONTACT
+          </Link>
+          <Link
+            href="/"
+            className="block text-white text-center py-2 cursor-pointer bg-red-500"
+            onClick={toggleMenu}
+          >
+            RESUME
           </Link>
         </div>
       )}
