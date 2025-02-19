@@ -17,7 +17,7 @@ function Navbar() {
         </span>
         <div className="hidden md:flex space-x-12">
           <Link
-            href="/"
+            href="#home"
             className="text-base relative p-2 text-white  py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             HOME
@@ -76,33 +76,34 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden mt-4 space-y-2">
           <Link
-            href="/"
+            href="#home"
             className="block text-white text-center py-2"
             onClick={toggleMenu}
           >
             HOME
           </Link>
           <Link
-            href="/bio"
+            href="#bio"
             className="block text-white text-center py-2"
             onClick={toggleMenu}
           >
             ABOUT
           </Link>
           <Link
-            href="/project"
+            href="#project"
             className="block text-white text-center py-2"
             onClick={toggleMenu}
           >
             PROJECT
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className="block text-white text-center py-2 cursor-pointer"
             onClick={toggleMenu}
           >
             CONTACT
           </Link>
+
           <Link
             href="/"
             className="block text-white text-center py-2 cursor-pointer bg-red-500"

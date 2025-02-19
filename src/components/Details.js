@@ -3,7 +3,7 @@
 function Details() {
   return (
     <div className="w-full md:w-fit p-4 md:p-8">
-      <p className="text-sm sm:text-base md:text-l lg:text-1xl font-poppins text-black text-justify leading-6 sm:leading-7 md:leading-8 lg:leading-9">
+      <p className="text-sm sm:text-sm md:text-based lg:text-lg font-poppins text-black text-justify leading-6 sm:leading-7 md:leading-8 lg:leading-9">
         I graduated with a Bachelor of Science in Information Technology (BSIT)
         in 2021-2022. I was employed as a teacher from 2022 to 2024 at SHS Liceo
         de Cagayan University. During this time, I nurtured my passion for

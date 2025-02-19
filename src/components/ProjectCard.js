@@ -3,11 +3,13 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Vtracer",
-    description: "A simple and elegant way to start coding with PHP.",
-    image: "/assets/new-php-logo.png",
+    title: "Vtrace",
+    description: "Contact tracing website",
+    image: "/assets/VTrace.png",
     alt: "Vtracer Logo",
-    link: "/projects/vtracer",
+    link: "https://kyshr.github.io/fast-trace/#/",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
   {
     title: "CSS Mastery",
@@ -15,6 +17,8 @@ const projects = [
     image: "/assets/css-logo.png",
     alt: "CSS Logo",
     link: "/projects/css-mastery",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
   {
     title: "HTML Basics",
@@ -22,6 +26,8 @@ const projects = [
     image: "/assets/html-logo.png",
     alt: "HTML Logo",
     link: "/projects/html-basics",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
   {
     title: "Next.js",
@@ -29,6 +35,8 @@ const projects = [
     image: "/assets/nextjs-logo.png",
     alt: "Next.js Logo",
     link: "/projects/nextjs",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
   {
     title: "React",
@@ -36,6 +44,8 @@ const projects = [
     image: "/assets/react-logo.png",
     alt: "React Logo",
     link: "/projects/react",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
   {
     title: "Node.js",
@@ -43,6 +53,8 @@ const projects = [
     image: "/assets/nodejs-logo.png",
     alt: "Node.js Logo",
     link: "/projects/nodejs",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
   {
     title: "TailwindCSS",
@@ -50,27 +62,29 @@ const projects = [
     image: "/assets/tailwindcss-logo.png",
     alt: "TailwindCSS Logo",
     link: "/projects/tailwindcss",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
 ];
 
 function ProjectCard() {
   return (
     <div className="container mx-auto px-4 py-4">
-      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {projects.map((project, index) => (
           <Link
             href={project.link}
             key={index}
+            target={project.target}
+            rel={project.rel}
             className="block cursor-pointer"
           >
-            <div className="mx-auto w-full max-w-[200px] bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div className="mx-auto w-full max-w-md bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
               <div className="relative w-full h-32 flex items-center justify-center bg-gray-100">
                 <img
                   src={project.image}
                   alt={project.alt}
-                  width={60}
-                  height={60}
-                  className="object-contain"
+                  className="object-contain w-full h-auto"
                 />
               </div>
               <div className="p-4 text-center">

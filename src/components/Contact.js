@@ -1,72 +1,114 @@
 "use client";
+import { useState } from "react";
 
-function Contact() {
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    fullname: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [feedback, setFeedback] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setFeedback(null); // Reset feedback message
+
+    try {
+      const response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setFeedback({
+          type: "success",
+          message: "✅ Message sent successfully!",
+        });
+        setFormData({ fullname: "", email: "", message: "" }); // Reset form
+      } else {
+        setFeedback({
+          type: "error",
+          message: "❌ Failed to send message. Try again!",
+        });
+      }
+    } catch (err) {
+      setFeedback({
+        type: "error",
+        message: "⚠️ Network error! Please try again.",
+      });
+    }
+
+    setLoading(false);
+  };
+
   return (
-    <div
-      id="contact"
-      className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto mt-10 border-mainColor border-2"
-    >
-      <form className="space-y-3">
-        {/* Full Name */}
-        <div>
-          <label
-            className="block text-xs font-medium text-gray-700 mb-1"
-            htmlFor="fullname"
-          >
-            Full Name
-          </label>
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            className="w-full p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-mainColor transition duration-300 ease-in-out"
-          />
-        </div>
+    <div className="max-w-md mx-auto p-4 border rounded-lg shadow-lg bg-white">
+      <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
 
-        {/* Email Address */}
-        <div>
-          <label
-            className="block text-xs font-medium text-gray-700 mb-1"
-            htmlFor="email"
-          >
-            Email Address
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="w-full p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-mainColor transition duration-300 ease-in-out"
-          />
-        </div>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          name="fullname"
+          value={formData.fullname}
+          onChange={handleChange}
+          placeholder="Full Name"
+          className="w-full p-2 border rounded"
+          required
+        />
 
-        {/* Message */}
-        <div>
-          <label
-            className="block text-xs font-medium text-gray-700 mb-1"
-            htmlFor="message"
-          >
-            Your Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            className="w-full resize-none p-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-2 focus:ring-mainColor transition duration-300 ease-in-out"
-            rows="3"
-          ></textarea>
-        </div>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Email Address"
+          className="w-full p-2 border rounded"
+          required
+        />
 
-        {/* Submit Button */}
-        <div className="text-center">
-          <button
-            type="submit"
-            className="w-1/2 py-2 px-4 bg-mainColor border-black text-white text-sm font-semibold rounded-md transition duration-300 ease-in-out"
-          >
-            Submit
-          </button>
-        </div>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Your Message"
+          className="w-full p-2 border rounded h-24"
+          required
+        />
+
+        <button
+          type="submit"
+          className={`w-full p-2 rounded text-white ${
+            loading ? "bg-black" : "bg-green-500 hover:bg-green-700"
+          }`}
+          disabled={loading}
+        >
+          {loading ? "Sending..." : "Send Message"}
+        </button>
       </form>
+
+      {/* ✅ Show feedback message BELOW the form */}
+      {feedback && (
+        <p
+          className={`mt-4 p-2 rounded text-sm text-center ${
+            feedback.type === "success"
+              ? "text-green-700 bg-green-100"
+              : "text-red-700 bg-red-100"
+          }`}
+        >
+          {feedback.message}
+        </p>
+      )}
     </div>
   );
 }
-
-export default Contact;
