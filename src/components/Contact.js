@@ -82,7 +82,7 @@ export default function Contact() {
           value={formData.message}
           onChange={handleChange}
           placeholder="Your Message"
-          className="w-full p-2 border rounded h-24"
+          className="w-full p-2 border rounded h-24 resize-none"
           required
         />
 
