@@ -16,7 +16,7 @@ export default function TechnicalSkills() {
       {skills.map((skill, index) => (
         <div
           key={index}
-          className="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center"
+          className="bg-secondaryColor p-4 rounded-lg shadow-sm flex flex-col items-center"
         >
           <img
             src={skill.svgPath}
