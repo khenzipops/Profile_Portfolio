@@ -41,17 +41,17 @@ export default function Home() {
       </div>
 
       {/* Start ProjectCard */}
-      <div id="project" className="pt-14 md:mt-8">
+      {/* <div id="project" className="pt-14 md:mt-8">
         <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold ml-3 opacity-40">
           PROJECT
         </h1>
         <div className="p-4 md:p-8">
           <ProjectCard />
         </div>
-      </div>
+      </div> */}
 
       {/* Technical Skills */}
-      <div className="bg-secondaryColor  p-3">
+      <div className="  p-3">
         <h1 className="text-3xl border-l-4 border-mainColor  font-roboto font-semibold p-2 mb-2 opacity-40">
           TECHNICAL SKILL
         </h1>
@@ -61,7 +61,7 @@ export default function Home() {
       </div>
 
       {/* CONTACT US */}
-      <div id="contact" className=" p-3 mb-32  ">
+      <div id="contact" className=" p-3 mb-32 bg-secondaryColor  ">
         <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold opacity-40">
           CONTACT
         </h1>

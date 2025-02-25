@@ -89,11 +89,11 @@ export default function Contact() {
         <button
           type="submit"
           className={`w-full p-2 rounded text-white ${
-            loading ? "bg-black" : "bg-green-500 hover:bg-green-700"
+            loading ? "bg-black" : "bg-mainColor hover:bg-green-700"
           }`}
           disabled={loading}
         >
-          {loading ? "Sending..." : "Send Message"}
+          {loading ? "Sending..." : "Submit"}
         </button>
       </form>
 

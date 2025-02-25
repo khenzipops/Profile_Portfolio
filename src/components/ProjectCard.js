@@ -14,7 +14,7 @@ const projects = [
   {
     title: "CSS Mastery",
     description: "Master the art of CSS for beautiful web designs.",
-    image: "/assets/css-logo.png",
+    image: "/assets/.png",
     alt: "CSS Logo",
     link: "/projects/css-mastery",
     target: "_blank",
@@ -87,7 +87,7 @@ function ProjectCard() {
                   className="object-contain w-full h-auto"
                 />
               </div>
-              <div className="p-4 text-center">
+              <div className="p-8 text-center">
                 <h2 className="text-lg font-semibold text-gray-800">
                   {project.title}
                 </h2>
