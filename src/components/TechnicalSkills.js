@@ -4,9 +4,9 @@ const skills = [
   { name: "HTML", svgPath: "/assets/html.svg" },
   { name: "CSS", svgPath: "/assets/css_3.svg" },
   { name: "PYTHON", svgPath: "/assets/python.svg" },
-  { name: "MariaDb", svgPath: "assets/Mariadb.svg" },
-  { name: "NextJS", svgPath: "assets/NextJS.svg" },
-  { name: "PHP", svgPath: "assets/PHP.svg" },
+  { name: "MariaDb", svgPath: "/assets/Mariadb.svg" },
+  { name: "NextJS", svgPath: "/assets/NextJS.svg" },
+  { name: "PHP", svgPath: "/assets/PHP.svg" },
   { name: "TailwindCSS", svgPath: "assets/tailwindcss.svg" },
 ];
 
