@@ -29,10 +29,10 @@ function Navbar() {
             ABOUT
           </Link>
           <Link
-            href="#project"
+            href="#TechnicalSkills"
             className="text-base relative p-2 text-white  py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
-            PROJECT
+            SKILLS
           </Link>
           <Link
             href="#contact"
@@ -42,7 +42,9 @@ function Navbar() {
           </Link>
 
           <Link
-            href="#"
+            href="https://drive.google.com/file/d/1og1XoZ4VwGc1bHGyy7H8auYbMfAMYhab/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
             className=" bg-red-500 p-2 text-base relative text-white py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
           >
             RESUME
@@ -90,11 +92,11 @@ function Navbar() {
             ABOUT
           </Link>
           <Link
-            href="#project"
+            href="#TechnicalSkills"
             className="block text-white text-center py-2"
             onClick={toggleMenu}
           >
-            PROJECT
+            SKILLS
           </Link>
           <Link
             href="#contact"
@@ -105,7 +107,9 @@ function Navbar() {
           </Link>
 
           <Link
-            href="/"
+            href="https://drive.google.com/file/d/1og1XoZ4VwGc1bHGyy7H8auYbMfAMYhab/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block text-white text-center py-2 cursor-pointer bg-red-500"
             onClick={toggleMenu}
           >

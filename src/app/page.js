@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Details from "@/components/Details";
-import ProjectCard from "@/components/ProjectCard";
+// import ProjectCard from "@/components/ProjectCard";
 import Contact from "@/components/Contact";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import ContactText from "@/components/ContactText";
@@ -8,9 +8,9 @@ import FloatingIcons from "../components/FloatingIcons";
 
 export default function Home() {
   return (
-    <div>
+    <div className=" h-screen">
       <Navbar />
-      <div className=" text-center h-96 md:h-96 sm:h-72 mb-32">
+      <div className=" text-center  md:h-96 sm:h-72 mb-32">
         <div id="/" className="p-40 scroll-mt-20">
           <h1 className="font-anton font-semibold text-6xl md:text-8xl sm:text-[60px]  cursor-pointer text-black z-10">
             Hi! I'm <span className="text-mainColor">Kenneth</span>.
@@ -22,7 +22,10 @@ export default function Home() {
       </div>
 
       {/* Start ME */}
-      <div id="bio" className="bg-secondaryColor p-3">
+      <div
+        id="bio"
+        className="bg-secondaryColor p-3  h-screen mb-4 sm:mb-36 md:mb-21 lg:mb-6 xl:mb-0"
+      >
         <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold opacity-40 mt-10 ">
           ME
         </h1>
@@ -51,7 +54,7 @@ export default function Home() {
       </div> */}
 
       {/* Technical Skills */}
-      <div className="  p-3">
+      <div id="TechnicalSkills" className="  p-3  h-screen">
         <h1 className="text-3xl border-l-4 border-mainColor  font-roboto font-semibold p-2 mb-2 opacity-40">
           TECHNICAL SKILL
         </h1>
@@ -61,7 +64,7 @@ export default function Home() {
       </div>
 
       {/* CONTACT US */}
-      <div id="contact" className=" p-3 mb-32 bg-secondaryColor  ">
+      <div id="contact" className=" p-3 mb-32 bg-secondaryColor h-screen  ">
         <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold opacity-40">
           CONTACT
         </h1>
