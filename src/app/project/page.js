@@ -36,6 +36,7 @@ export default function AboutPage() {
         </div>
         {/* End of Project Card */}
       </div>
+      
     </div>
   );
 }

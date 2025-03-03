@@ -42,7 +42,7 @@ function Navbar() {
           </Link>
 
           <Link
-            href="https://drive.google.com/file/d/1og1XoZ4VwGc1bHGyy7H8auYbMfAMYhab/view?usp=drive_link"
+            href="https://https://drive.google.com/file/d/1Vpp9ZJOHM32YCcOGzwAdqxuNLMs-JlxM/view"
             target="_blank"
             rel="noopener noreferrer"
             className=" bg-red-500 p-2 text-base relative text-white py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
@@ -107,7 +107,7 @@ function Navbar() {
           </Link>
 
           <Link
-            href="https://drive.google.com/file/d/1og1XoZ4VwGc1bHGyy7H8auYbMfAMYhab/view?usp=drive_link"
+            href="https://https://drive.google.com/file/d/1Vpp9ZJOHM32YCcOGzwAdqxuNLMs-JlxM/view"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-white text-center py-2 cursor-pointer bg-red-500"
