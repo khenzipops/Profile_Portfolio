@@ -5,20 +5,15 @@ import Contact from "@/components/Contact";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import ContactText from "@/components/ContactText";
 import FloatingIcons from "../components/FloatingIcons";
+import Cover from "@/components/Cover";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div className=" h-screen">
       <Navbar />
-      <div className=" text-center  md:h-96 sm:h-72 mb-32">
-        <div id="/" className="p-40 scroll-mt-20">
-          <h1 className="font-anton font-semibold text-6xl md:text-8xl sm:text-[60px]  cursor-pointer text-black z-10">
-            Hi! I'm <span className="text-mainColor">Kenneth</span>.
-          </h1>
-          <h1 className="font-roboto font-medium text-xl md:text-2xl sm:text-lg text-black z-10">
-            FRONTEND DEVELOPER
-          </h1>
-        </div>
+      <div id="/" className=" text-center  md:h-96 sm:h-72 mb-32">
+        <Cover />
       </div>
 
       {/* Start ME */}
