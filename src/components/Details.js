@@ -13,7 +13,7 @@ function Details() {
         software development and networking. I am focused on improving my coding
         skills and IT systems expertise, and my goal is to apply my knowledge in
         real-world projects, contributing to innovative tech solutions that make
-        a meaningful impact. solutions.
+        a meaningful impact solutions.
       </p>
     </div>
   );
