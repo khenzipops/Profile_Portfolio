@@ -64,7 +64,7 @@ export default function Home() {
           </div>
 
           {/* Details Section */}
-          <div className="bg-secondaryColor text-lg sm:text-xl md:text-xl border-l-4 md:border-l-8 border-mainColor mt-4 md:mt-0 md:ml-6 p-4 sm:p-5 md:p-6 w-full">
+          <div className="bg-secondaryColor text-lg sm:text-xl md:text-xl border-l-0 md:border-l-8 border-mainColor mt-4 md:mt-0 md:ml-6   w-full">
             <Details />
           </div>
         </div>
