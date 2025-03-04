@@ -12,7 +12,7 @@ const FloatingIcons = () => {
         <GrLinkedinOption />
       </a>
       <a
-        href="https://github.com/kpopera143"
+        href="https://github.com/khenzipops"
         target="_blank"
         rel="noopener noreferrer"
         className="text-3xl text-blue-400 hover:text-blue-300 transition duration-300"
