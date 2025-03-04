@@ -27,5 +27,25 @@ export default {
       },
     },
   },
+
+  keyframes: {
+    "tracking-in-expand-fwd": {
+      "0%": {
+        "letter-spacing": "-0.5em",
+        opacity: "0",
+      },
+      "40%": {
+        opacity: "0.6",
+      },
+      "100%": {
+        "letter-spacing": "normal",
+        opacity: "1",
+      },
+    },
+  },
+  animation: {
+    "tracking-in-expand-fwd":
+      "tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both",
+  },
   plugins: [],
 };
