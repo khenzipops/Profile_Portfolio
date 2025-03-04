@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <div
         id="/"
-        className=" text-center lg:h-screen md:h-96 sm:h-72 mb-28 lg:pt-28"
+        className=" text-center lg:h-screen md:h-96 sm:h-72 mb-28 lg:pt-28 jello-diagonal-2"
       >
         <Cover />
       </div>
