@@ -11,40 +11,14 @@ export default function Home() {
   return (
     <div className=" h-screen">
       <Navbar />
-      <div id="/" className=" text-center  md:h-96 sm:h-72 mb-32">
+      <div
+        id="/"
+        className=" text-center lg:h-screen md:h-96 sm:h-72 mb-28 lg:pt-28"
+      >
         <Cover />
       </div>
 
       {/* Start ME */}
-      {/* <div
-        id="bio"
-        className="bg-secondaryColor p-3  h-screen mb-4 sm:mb-36 md:mb-21 lg:mb-6 xl:mb-0"
-      >
-        <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold opacity-40 mt-10 ">
-          ME
-        </h1>
-        <div className="grid sm:grid-cols-1 md:grid-cols-[25%_75%] gap-2 w-full h-auto p-6 bg-secondaryColor mb-32">
-          <div className="bg-secondaryColor w-full p-3 grid justify-center items-center">
-            <img
-              src="/assets/photo_white.png"
-              alt="Profile Photo"
-              className="rounded-full object-cover h-auto w-24 sm:w-60 md:w-96"
-            />
-          </div>
-          <div className="bg-secondaryColor text-xl md:text-xl md:border-l-8 border-mainColor mt-6 md:mt-0 md:ml-6 p-5 md:p-6">
-            <Details />
-          </div>
-        </div>
-      </div>
-
-      <div id="TechnicalSkills" className="  p-3  h-screen">
-        <h1 className="text-3xl border-l-4 border-mainColor  font-roboto font-semibold p-2 mb-2 opacity-40">
-          TECHNICAL SKILL
-        </h1>
-        <div className="p-3 mb-44">
-          <TechnicalSkills />
-        </div>
-      </div> */}
 
       <div
         id="bio"
