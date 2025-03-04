@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useInView(ref) {
+function View(ref) {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
@@ -18,3 +18,4 @@ export default function useInView(ref) {
 
   return isInView;
 }
+export default View;

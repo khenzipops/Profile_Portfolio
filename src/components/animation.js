@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import useInView from "@/hooks/useInView";
+import View from "@/hooks/View";
 
-export default function AnimatedText() {
+function AnimatedText() {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = View(ref);
 
   return (
     <h1
@@ -16,3 +16,4 @@ export default function AnimatedText() {
     </h1>
   );
 }
+export default AnimatedText;

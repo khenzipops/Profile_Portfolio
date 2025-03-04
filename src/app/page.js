@@ -88,7 +88,7 @@ import TechnicalSkills from "@/components/TechnicalSkills";
 import ContactText from "@/components/ContactText";
 import FloatingIcons from "../components/FloatingIcons";
 import Cover from "@/components/Cover";
-import useInView from "@/hooks/useInView";
+import useInView from "../hooks/useinView";
 
 export default function Home() {
   const coverRef = useRef(null);
