@@ -9,6 +9,7 @@ import FloatingIcons from "../components/FloatingIcons";
 import Cover from "@/components/Cover";
 import useInView from "../hooks/useinView";
 import ContactInfo from "@/components/ContactInfo";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const coverRef = useRef(null);
@@ -50,7 +51,7 @@ export default function Home() {
             <img
               src="/assets/photo_white.png"
               alt="Profile Photo"
-              className="rounded-full object-cover w-24 sm:w-40 md:w-60 lg:w-96 max-w-full"
+              className="rounded-full object-cover w-48 sm:w-56 md:w-96 lg:w-96 max-w-full"
             />
           </div>
           <div className="bg-secondaryColor text-lg sm:text-xl md:text-xl border-l-0 md:border-l-8 border-mainColor mt-4 md:mt-0 md:ml-6 w-full">
@@ -89,7 +90,8 @@ export default function Home() {
             <ContactText />
           </div>
           <div className="pt-10 p-3">
-            <ContactInfo />
+            {/* <ContactInfo /> */}
+            <Contact />
           </div>
         </div>
       </div>
