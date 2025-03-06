@@ -90,8 +90,8 @@ export default function Home() {
             <ContactText />
           </div>
           <div className="pt-10 p-3">
-            {/* <ContactInfo /> */}
-            <Contact />
+            <ContactInfo />
+            {/* <Contact /> */}
           </div>
         </div>
       </div>
