@@ -3,12 +3,12 @@
 import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Details from "@/components/Details";
-import Contact from "@/components/Contact";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import ContactText from "@/components/ContactText";
 import FloatingIcons from "../components/FloatingIcons";
 import Cover from "@/components/Cover";
 import useInView from "../hooks/useinView";
+import ContactInfo from "@/components/ContactInfo";
 
 export default function Home() {
   const coverRef = useRef(null);
@@ -89,7 +89,7 @@ export default function Home() {
             <ContactText />
           </div>
           <div className="pt-10 p-3">
-            <Contact />
+            <ContactInfo />
           </div>
         </div>
       </div>
