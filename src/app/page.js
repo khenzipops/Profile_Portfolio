@@ -8,7 +8,8 @@ import ContactText from "@/components/ContactText";
 import FloatingIcons from "../components/FloatingIcons";
 import Cover from "@/components/Cover";
 import useInView from "../hooks/useinView";
-import ContactInfo from "@/components/ContactInfo";
+// import ContactInfo from "@/components/ContactInfo";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const coverRef = useRef(null);
@@ -89,11 +90,11 @@ export default function Home() {
             <ContactText />
           </div>
           <div className="pt-10 p-3">
-            <ContactInfo />
+            {/* <ContactInfo /> */}
+            <Contact />
           </div>
         </div>
       </div>
-
       <FloatingIcons />
     </div>
   );
