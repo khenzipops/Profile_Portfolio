@@ -23,7 +23,7 @@ export default function Contact() {
 
     try {
       const response = await fetch(
-        `profile-backend-ashen.vercel.app/api/contact`, // API URL
+        `https//profile-backend-ashen.vercel.app/api/contact`, // API URL
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
