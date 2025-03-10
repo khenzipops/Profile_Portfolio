@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +13,9 @@ function Navbar() {
   return (
     <nav className="bg-mainColor p-2 shadow-2xl bg-opacity-100 fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <span className="text-2xl font-bold font-mmd text-white cursor-pointer">
-          Khenz
-        </span>
+        <a href="/" className="logo">
+          <Image src="/assets/Khenzdd.svg" alt="Logo" width={50} height={80} />
+        </a>
         <div className="hidden md:flex space-x-12">
           <Link
             href="#home"
