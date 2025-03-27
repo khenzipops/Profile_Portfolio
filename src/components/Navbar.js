@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md opacity-100 fixed top-0 left-0 w-full z-50">
+    <nav className="bg-white shadow-md opacity-70 fixed top-0 left-0 w-full z-50">
       <div className="container p-4 mx-auto flex justify-between items-center">
         <a href="/" className="logo">
           <Image
@@ -71,7 +71,7 @@ function Navbar() {
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
-            className="text-white focus:outline-none"
+            className="text-blue-textColor focus:outline-none"
           >
             <svg
               className="w-6 h-6"
@@ -94,41 +94,41 @@ function Navbar() {
         <div className="md:hidden mt-4 space-y-2">
           <Link
             href="#home"
-            className="block text-white text-center py-2"
+            className="block text-textColor text-center py-2 text-xl font-poppins"
             onClick={toggleMenu}
           >
-            HOME
+            Home
           </Link>
           <Link
             href="#bio"
-            className="block text-white text-center py-2"
+            className="block text-textColor text-center py-2 text-xl font-poppins"
             onClick={toggleMenu}
           >
-            ABOUT
+            About
           </Link>
           <Link
             href="#TechnicalSkills"
-            className="block text-white text-center py-2"
+            className="block text-textColor text-center py-2 text-xl font-poppins"
             onClick={toggleMenu}
           >
-            SKILLS
+            Skill
           </Link>
           <Link
             href="#contact"
-            className="block text-white text-center py-2 cursor-pointer"
+            className="block text-textColor text-center py-2 cursor-pointer text-xl font-poppins"
             onClick={toggleMenu}
           >
-            CONTACT
+            Contact
           </Link>
 
           <Link
             href="https://drive.google.com/file/d/1Vpp9ZJOHM32YCcOGzwAdqxuNLMs-JlxM/view"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-textColor text-center py-2 cursor-pointer bg-blue-500"
+            className="block text-white text-center py-2 cursor-pointer bg-blue-500 text-xl font-poppins"
             onClick={toggleMenu}
           >
-            RESUME
+            Resume
           </Link>
         </div>
       )}
