@@ -24,6 +24,7 @@ export default {
       colors: {
         mainColor: "#A8C686",
         secondaryColor: "#F5F5F5",
+        textColor: "#2e5b97",
       },
     },
   },

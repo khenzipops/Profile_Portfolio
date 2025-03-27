@@ -11,46 +11,60 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-mainColor p-2 shadow-2xl bg-opacity-100 fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-white shadow-md opacity-100 fixed top-0 left-0 w-full z-50">
+      <div className="container p-4 mx-auto flex justify-between items-center">
         <a href="/" className="logo">
-          <Image src="/assets/Khenz.png" alt="Logo" width={50} height={80} />
+          <Image
+            src="/assets/logo-black.png"
+            alt="Logo"
+            width={80}
+            height={50}
+          />
         </a>
-        <div className="hidden md:flex space-x-12">
-          <Link
-            href="#home"
-            className="text-base relative p-2 text-white  py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
-          >
-            HOME
-          </Link>
-          <Link
-            href="#bio"
-            className="text-base relative p-2 text-white  py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
-          >
-            ABOUT
-          </Link>
-          <Link
-            href="#TechnicalSkills"
-            className="text-base relative p-2 text-white  py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
-          >
-            SKILLS
-          </Link>
-          <Link
-            href="#contact"
-            className="text-base relative p-2 text-white py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
-          >
-            CONTACT
-          </Link>
-
-          <Link
-            href="https://drive.google.com/file/d/1Vpp9ZJOHM32YCcOGzwAdqxuNLMs-JlxM/view"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" bg-red-500 p-2 text-base relative text-white py-1 before:absolute before:inset-0 before:border-2 before:border-white before:scale-0 before:transition-transform before:duration-300 hover:before:scale-100"
-          >
-            RESUME
-          </Link>
-        </div>
+        <ul className="hidden md:flex space-x-8">
+          <li>
+            <Link
+              href="#home"
+              className="text-xl font-poppins font-medium relative p-2   text-textColor   before:absolute before:inset-0 before:border-2 before:border-blue-500 before:scale-0 before:transition-transform before:duration-700 hover:before:scale-100"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#bio"
+              className="text-xl font-poppins font-medium relative p-2   text-textColor before:absolute before:inset-0 before:border-2 before:border-blue-500 before:scale-0 before:transition-transform before:duration-700 hover:before:scale-100"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#TechnicalSkills"
+              className="text-xl font-poppins font-medium relative p-2  text-textColor before:absolute before:inset-0 before:border-2 before:border-blue-500 before:scale-0 before:transition-transform before:duration-700 hover:before:scale-100"
+            >
+              Skills
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#contact"
+              className="text-xl font-poppins font-medium relative p-2  text-textColor before:absolute before:inset-0 before:border-2  before:border-blue-500 before:scale-0 before:transition-transform before:duration-700 hover:before:scale-100"
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://drive.google.com/file/d/1Vpp9ZJOHM32YCcOGzwAdqxuNLMs-JlxM/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" bg-white rounded-md border mt-1 border-black p-4 text-xl relative text-textColor py-1 before:absolute before:inset-0 before:border-2 before:border-blue-500 before:scale-0 before:transition-transform before:duration-700 hover:before:scale-100"
+            >
+              Resume
+            </Link>
+          </li>
+        </ul>
 
         {/* MOBILE VIEW */}
 
@@ -111,7 +125,7 @@ function Navbar() {
             href="https://drive.google.com/file/d/1Vpp9ZJOHM32YCcOGzwAdqxuNLMs-JlxM/view"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-white text-center py-2 cursor-pointer bg-red-500"
+            className="block text-textColor text-center py-2 cursor-pointer bg-blue-500"
             onClick={toggleMenu}
           >
             RESUME
