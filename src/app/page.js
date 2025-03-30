@@ -25,36 +25,30 @@ export default function Home() {
     <div className="h-screen">
       <Navbar />
 
-      <div
-        id="/"
-        ref={coverRef}
-        className={`text-center lg:h-screen md:h-96 sm:h-72 mb-28 lg:pt-28 ${
-          isCoverInView ? "animate-tracking-in-expand-fwd" : "opacity-0"
-        }`}
-      >
+      <div id="/" ref={coverRef}>
         <Cover />
       </div>
 
       <div
         id="bio"
         ref={bioRef}
-        className={`bg-secondaryColor p-3 min-h-screen mb-10 sm:mb-24 md:mb-32 lg:mb-20 xl:mb-10 w-full ${
-          isBioInView ? "animate-tracking-in-expand-fwd" : "opacity-0"
+        className={`bg-yellow-400 p-3 min-h-screen mb-10 sm:mb-24 md:mb-32 lg:mb-20 xl:mb-10 w-full ${
+          isBioInView ? "animate-tracking-in-expand-fwd" : "opacity-90"
         }`}
       >
         <h1 className="text-2xl sm:text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold opacity-40 mt-6 sm:mt-10">
           ME
         </h1>
         <div className="grid sm:grid-cols-1 md:grid-cols-[25%_75%] gap-4 w-full h-auto p-4 sm:p-6 bg-secondaryColor mb-20">
-          <div className="bg-secondaryColor w-full p-3 grid justify-center items-center">
+          {/* <div className="bg-secondaryColor w-full p-3 grid justify-center items-center">
             <img
               src="/assets/photo_white.png"
               alt="Profile Photo"
               className="rounded-full object-cover w-48 sm:w-56 md:w-96 lg:w-96 max-w-full"
             />
-          </div>
+          </div> */}
           <div className="bg-secondaryColor text-lg sm:text-xl md:text-xl border-l-0 md:border-l-8 border-mainColor mt-4 md:mt-0 md:ml-6 w-full">
-            <Details />
+            {/* <Details /> */}
           </div>
         </div>
       </div>
