@@ -1,13 +1,12 @@
 "use client";
 import Image from "next/image";
-import { Asset } from "next/font/google";
 
 export default function Cover() {
   return (
     <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex md:flex-row md:justify-between  mt-16">
       <div className="   p-2">
         <div className="grid grid-rows-2 h-max">
-          <div className=" h-72">
+          <div className=" h-65">
             <div className="flex  p-4 lg:ml-12 mt-20">
               <div className="">
                 <h1 className="font-poppins  text-based md:text-2xl lg:text-3xl md:ml-4 lg:ml-4 ">
