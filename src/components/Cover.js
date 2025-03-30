@@ -15,10 +15,10 @@ export default function Cover() {
                     Hello there!
                   </span>
                 </h1>
-                <h1 className="font-poppins text-xl md:text-2xl  lg:text-4xl md:m-4 lg:m-4 font-semibold tracking-normal md:tracking-tighter lg:tracking-wide">
+                <h1 className="font-poppins text-xl md:text-2xl  lg:text-4xl md:m-4 lg:m-4 font-semibold tracking-normal md:tracking-tighter lg:tracking-tight mt-1">
                   I'm Kenneth Popera,
                 </h1>
-                <h1 className="font-semibold  text-xl md:text-2xl  lg:text-5xl md:m-3 lg:m-3 font-poppins tracking-tighter md:tracking-tighter lg:tracking-wider">
+                <h1 className="font-bold  text-xl md:text-2xl  lg:text-4xl md:m-3 lg:m-3 font-poppins tracking-tighter md:tracking-tighter lg:tracking-wider">
                   Web Developer
                 </h1>
                 <h1 className=" m-2 font-light  lg:ml-8 text-gray-400 text-based md:text-1xl  lg:text-1xl font-poppins tracking-tighter md:tracking-tight lg:tracking-wider">
@@ -27,20 +27,20 @@ export default function Cover() {
               </div>
             </div>
           </div>
-          <div className="h-72 ">
-            <div className="flex mt-28">
-              <div className="ml-10 md:ml-15 lg:ml-32">
+          <div className="h-52 gap-4">
+            <div className="grid grid-cols-2 text-center sm:mt-16 md:mt-24 ">
+              <div className="">
                 <a
                   href=""
-                  className="font-poppins text-sm lg:text-xl font-normal rounded-full text-white bg-blue-500 hover:bg-blue-600 p-2 pl-4"
+                  className="font-poppins sm:text-base md:text-base lg:text-xl  font-normal rounded-full text-white bg-blue-500 hover:bg-blue-600 p-2 pl-4 pr-4  "
                 >
                   Hire me
                 </a>
               </div>
-              <div className="ml-10 md:ml-15 lg:ml-32">
+              <div className="">
                 <a
                   href=""
-                  className="font-poppins text-sm lg:text-xl  font-normal rounded-full border-4 border-blue-500 hover:border-blue-600 p-1"
+                  className="font-poppins sm:text-base md:text-base lg:text-xl  font-normal rounded-full border-4 border-blue-500 hover:border-blue-600 p-1"
                 >
                   Certificates
                 </a>
@@ -51,11 +51,11 @@ export default function Cover() {
       </div>
 
       {/* right side image */}
-      <div className="w-full relative flex justify-center">
+      <div className="w-full relative flex justify-center gap-5">
         <Image
           src="/assets/Portfolio.png"
           alt="profile-image"
-          className=" max-w-[500px] sm:max-w-[300px] md:max-w-[200px] lg:max-w-[500px]"
+          className="w-full sm:w-auto h-auto"
           width={600}
           height={600}
           layout="intrinsic"
