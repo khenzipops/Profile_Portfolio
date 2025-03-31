@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md opacity-70 fixed top-0 left-0 w-full z-50">
+    <nav className="bg-white shadow-md opacity-95 fixed top-0 left-0 w-full z-50">
       <div className="container p-4 mx-auto flex justify-between items-center">
         <a href="/" className="logo">
           <Image
