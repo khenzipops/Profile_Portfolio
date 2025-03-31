@@ -7,7 +7,7 @@ export default function Cover() {
       <div className="   p-2">
         <div className="grid grid-rows-2 h-max">
           <div className=" h-65">
-            <div className="flex  p-4 lg:ml-12 mt-20">
+            <div className=" p-4 lg:ml-12 mt-20">
               <div className="">
                 <h1 className="font-poppins  text-based md:text-2xl lg:text-3xl md:ml-4 lg:ml-4 ">
                   <span className=" border-4 border-blue-500  p-1">
@@ -27,19 +27,19 @@ export default function Cover() {
             </div>
           </div>
           <div className="h-52 gap-4">
-            <div className="grid grid-cols-2 text-center sm:mt-16 md:mt-24 ">
-              <div className="">
+            <div className="grid grid-cols-6 text-center sm:mt-16 md:mt-24 ">
+              <div className="gap-5 col-span-3">
                 <a
                   href=""
-                  className="font-poppins sm:text-base md:text-base lg:text-xl  font-normal rounded-full text-white bg-blue-500 hover:bg-blue-600 p-2 pl-4 pr-4  "
+                  className="font-poppins sm:text-xs md:text-base lg:text-xl  rounded-full text-white bg-blue-500 hover:bg-blue-600 p-2 pl-4 pr-4  "
                 >
-                  Hire me
+                  Hire Me
                 </a>
               </div>
-              <div className="">
+              <div className="gap-5 col-span-2">
                 <a
                   href=""
-                  className="font-poppins sm:text-base md:text-base lg:text-xl  font-normal rounded-full border-4 border-blue-500 hover:border-blue-600 p-1"
+                  className="font-poppins sm:text-xs md:text-base lg:text-xl  rounded-full text-white bg-blue-500 hover:bg-blue-600 p-2   "
                 >
                   Certificates
                 </a>

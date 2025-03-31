@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Navbar from "@/components/Navbar";
-import Details from "@/components/Details";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import ContactText from "@/components/ContactText";
 import FloatingIcons from "../components/FloatingIcons";
@@ -11,13 +10,10 @@ import useInView from "../hooks/useinView";
 import Contact from "@/components/Contact";
 
 export default function Home() {
-  const coverRef = useRef(null);
   const bioRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
 
-  const isCoverInView = useInView(coverRef);
-  const isBioInView = useInView(bioRef);
   const isSkillsInView = useInView(skillsRef);
   const isContactInView = useInView(contactRef);
 
@@ -25,34 +21,22 @@ export default function Home() {
     <div className="h-screen">
       <Navbar />
 
-      <div id="/" ref={coverRef}>
+      <div id="/">
         <Cover />
       </div>
 
+      <div id="bio" ref={bioRef} className="bg-gray-600 p-3 h-5"></div>
       <div
-        id="bio"
-        ref={bioRef}
-        className={`bg-yellow-400 p-3 min-h-screen mb-10 sm:mb-24 md:mb-32 lg:mb-20 xl:mb-10 w-full ${
-          isBioInView ? "animate-tracking-in-expand-fwd" : "opacity-90"
-        }`}
+        className="grid grid-cols-4 bg-blue-500 h-15 justify-center text-white sm:p-10 lg:p-4 text-center sm:text-xs md:text-xs lg:text-xl font-poppins
+       "
       >
-        <h1 className="text-2xl sm:text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold opacity-40 mt-6 sm:mt-10">
-          ME
-        </h1>
-        <div className="grid sm:grid-cols-1 md:grid-cols-[25%_75%] gap-4 w-full h-auto p-4 sm:p-6 bg-secondaryColor mb-20">
-          {/* <div className="bg-secondaryColor w-full p-3 grid justify-center items-center">
-            <img
-              src="/assets/photo_white.png"
-              alt="Profile Photo"
-              className="rounded-full object-cover w-48 sm:w-56 md:w-96 lg:w-96 max-w-full"
-            />
-          </div> */}
-          <div className="bg-secondaryColor text-lg sm:text-xl md:text-xl border-l-0 md:border-l-8 border-mainColor mt-4 md:mt-0 md:ml-6 w-full">
-            {/* <Details /> */}
-          </div>
+        <div>
+          <span>Front End Developer</span>
         </div>
+        <div>UI/UX Designer</div>
+        <div>Quality Assurance Website</div>
+        <div>SEO</div>
       </div>
-
       <div
         id="TechnicalSkills"
         ref={skillsRef}
