@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
@@ -10,93 +11,52 @@ const projects = [
     link: "https://kyshr.github.io/fast-trace/#/",
     target: "_blank",
     rel: "noopener noreferrer",
-  },
-  {
-    title: "CSS Mastery",
-    description: "Master the art of CSS for beautiful web designs.",
-    image: "/assets/.png",
-    alt: "CSS Logo",
-    link: "/projects/css-mastery",
-    target: "_blank",
-    rel: "noopener noreferrer",
-  },
-  {
-    title: "HTML Basics",
-    description: "Learn the basics of HTML for building web pages.",
-    image: "/assets/html-logo.png",
-    alt: "HTML Logo",
-    link: "/projects/html-basics",
-    target: "_blank",
-    rel: "noopener noreferrer",
-  },
-  {
-    title: "Next.js",
-    description: "Build modern web applications with Next.js.",
-    image: "/assets/nextjs-logo.png",
-    alt: "Next.js Logo",
-    link: "/projects/nextjs",
-    target: "_blank",
-    rel: "noopener noreferrer",
-  },
-  {
-    title: "React",
-    description: "Build interactive UIs with React.",
-    image: "/assets/react-logo.png",
-    alt: "React Logo",
-    link: "/projects/react",
-    target: "_blank",
-    rel: "noopener noreferrer",
-  },
-  {
-    title: "Node.js",
-    description: "Build scalable network applications with Node.js.",
-    image: "/assets/nodejs-logo.png",
-    alt: "Node.js Logo",
-    link: "/projects/nodejs",
-    target: "_blank",
-    rel: "noopener noreferrer",
-  },
-  {
-    title: "TailwindCSS",
-    description: "Style your web pages with TailwindCSS.",
-    image: "/assets/tailwindcss-logo.png",
-    alt: "TailwindCSS Logo",
-    link: "/projects/tailwindcss",
-    target: "_blank",
-    rel: "noopener noreferrer",
+    titlelink: "Visit",
   },
 ];
 
 function ProjectCard() {
   return (
-    <div className="container mx-auto px-4 py-4">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div>
+      <div className="p-2 text-5xl text-gray-200 font-roboto m-t-3  font-semibold">
+        <h1>Project</h1>
+      </div>
+
+      <div className="grid lg:grid-cols-2 md:lg:grid-cols-1 gap-2 p-10 ">
         {projects.map((project, index) => (
-          <Link
-            href={project.link}
-            key={index}
-            target={project.target}
-            rel={project.rel}
-            className="block cursor-pointer"
-          >
-            <div className="mx-auto w-full max-w-md bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-              <div className="relative w-full h-32 flex items-center justify-center bg-gray-100">
-                <img
-                  src={project.image}
-                  alt={project.alt}
-                  className="object-contain w-full h-auto"
-                />
+          <div key={index} className="m-2 font-poppins h-72 w-full rounded-lg">
+            <div className="flex h-full p-2 gap-5  bg-blue-100 bg-opacity-30 border border-blue-600 border-opacity-100 backdrop-blur-md  rounded-2xl">
+              <div className="w-1/4 flex flex-col gap-5">
+                {project.image && (
+                  <div className="w-full h-56 m-2 border-l-8 border-t-2 border-b-2 border-r-2 border-t-blue-600 border-r-blue-600 border-b-blue-600 border-l-blue-600 relative">
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      layout="fill"
+                      className="cover"
+                    />
+                  </div>
+                )}
+                <div className="bg-blue-500 p-2 m-2 rounded-lg text-white text-center font-poppins text-xl justify-center">
+                  <a
+                    href={project.link}
+                    target={project.target}
+                    rel={project.rel}
+                  >
+                    {project.titlelink}
+                  </a>
+                </div>
               </div>
-              <div className="p-8 text-center">
-                <h2 className="text-lg font-semibold text-gray-800">
-                  {project.title}
-                </h2>
-                <p className="text-gray-600 text-sm mt-2">
+              <div className="m-3 flex flex-col w-1/2  ">
+                <div className="h-8 w-auto  text-center justify-center font-poppins text-xl">
+                  <h1>{project.title}</h1>
+                </div>
+                <div className=" h-1/2 sm:text-xm lg:text-md">
                   {project.description}
-                </p>
+                </div>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

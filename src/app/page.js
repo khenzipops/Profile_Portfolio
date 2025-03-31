@@ -8,14 +8,12 @@ import FloatingIcons from "../components/FloatingIcons";
 import Cover from "@/components/Cover";
 import useInView from "../hooks/useinView";
 import Contact from "@/components/Contact";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   const bioRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
-
-  const isSkillsInView = useInView(skillsRef);
-  const isContactInView = useInView(contactRef);
 
   return (
     <div className="h-screen">
@@ -37,12 +35,13 @@ export default function Home() {
         <div>Quality Assurance Website</div>
         <div>SEO</div>
       </div>
+      <div className="">
+        <ProjectCard />
+      </div>
       <div
         id="TechnicalSkills"
         ref={skillsRef}
-        className={`p-3 sm:p-4 md:p-6 min-h-screen w-full ${
-          isSkillsInView ? "animate-tracking-in-expand-fwd" : "opacity-0"
-        }`}
+        className="p-3 sm:p-4 md:p-6 min-h-screen w-full"
       >
         <h1 className="text-2xl sm:text-3xl border-l-4 border-mainColor font-roboto font-semibold p-2 mb-4 opacity-40">
           TECHNICAL SKILL
@@ -55,9 +54,7 @@ export default function Home() {
       <div
         id="contact"
         ref={contactRef}
-        className={`p-3 mb-32 bg-secondaryColor h-screen ${
-          isContactInView ? "animate-tracking-in-expand-fwd" : "opacity-0"
-        }`}
+        className="p-3 mb-32 bg-secondaryColor h-screen"
       >
         <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold opacity-40">
           CONTACT
