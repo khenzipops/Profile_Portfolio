@@ -5,7 +5,8 @@ import Image from "next/image";
 const projects = [
   {
     title: "Vtrace",
-    description: "Contact tracing website",
+    description:
+      "I worked as a UI/UX designer for a group contact tracing website project in college, creating an intuitive and user-friendly design.",
     image: "/assets/VTrace.png",
     alt: "Vtracer Logo",
     link: "https://kyshr.github.io/fast-trace/#/",
@@ -26,9 +27,9 @@ function ProjectCard() {
         {projects.map((project, index) => (
           <div key={index} className="m-2 font-poppins h-72 w-full rounded-lg">
             <div className="flex h-full p-2 gap-5  bg-blue-100 bg-opacity-30 border border-blue-600 border-opacity-100 backdrop-blur-md  rounded-2xl">
-              <div className="w-1/4 flex flex-col gap-5">
+              <div className="w-1/2 flex flex-col gap-1">
                 {project.image && (
-                  <div className="w-full h-56 m-2 border-l-8 border-t-2 border-b-2 border-r-2 border-t-blue-600 border-r-blue-600 border-b-blue-600 border-l-blue-600 relative">
+                  <div className="w-full  h-full m-2 border-l-8 border-t-2 border-b-2 border-r-2 border-t-blue-600 border-r-blue-600 border-b-blue-600 border-l-blue-600 relative">
                     <Image
                       src={project.image}
                       alt={project.alt}
@@ -37,7 +38,7 @@ function ProjectCard() {
                     />
                   </div>
                 )}
-                <div className="bg-blue-500 p-2 m-2 rounded-lg text-white text-center font-poppins text-xl justify-center">
+                <div className="bg-blue-500 p-2 m-2 rounded-lg text-white text-center font-poppins text-xl justify-center w-full">
                   <a
                     href={project.link}
                     target={project.target}
@@ -47,11 +48,11 @@ function ProjectCard() {
                   </a>
                 </div>
               </div>
-              <div className="m-3 flex flex-col w-1/2  ">
+              <div className="m-3 flex flex-col w-full  ">
                 <div className="h-8 w-auto  text-center justify-center font-poppins text-xl">
                   <h1>{project.title}</h1>
                 </div>
-                <div className=" h-1/2 sm:text-xm lg:text-md">
+                <div className=" h-1/2 sm:text-xs lg:text-md">
                   {project.description}
                 </div>
               </div>
