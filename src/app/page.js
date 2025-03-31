@@ -31,8 +31,8 @@ export default function Home() {
         <div>
           <span>Front End Developer</span>
         </div>
-        <div>UI/UX Designer</div>
-        <div>Quality Assurance Website</div>
+        <div>UI/UX</div>
+        <div>Quality Assurance</div>
         <div>SEO</div>
       </div>
       <div className="">
