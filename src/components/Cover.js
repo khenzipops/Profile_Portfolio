@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Cover() {
   return (
     <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex md:flex-row md:justify-between  mt-16">
-      <div className="   p-2">
+      <div className="p-10 m-2">
         <div className="grid grid-rows-2 h-max">
           <div className=" h-65">
             <div className=" p-4 lg:ml-12 mt-20">
@@ -34,12 +34,12 @@ export default function Cover() {
               </div>
             </div>
           </div>
-          <div className="h-52 gap-4">
+          <div className="gap-4 sm:mt-24 lg:mt-16 ">
             <div className="grid grid-cols-2 text-center sm:mt-16 md:mt-24 ">
               <div className="gap-5 ">
                 <a href="">
                   <span
-                    className="text-xs md:text-base lg:text-xl inline-block text-white p-2 rounded-md
+                    className="text-xs md:text-base lg:text-xl inline-block text-white p-3 rounded-md
             bg-gradient-to-r from-blue-500 to-blue-600
             hover:from-blue-600 hover:to-blue-700
             transition-all duration-300 ease-in-out
@@ -58,7 +58,7 @@ export default function Cover() {
                   rel="noopener noreferrer"
                 >
                   <span
-                    className="text-xs md:text-base lg:text-xl  inline-block text-white p-2 rounded-md
+                    className="text-xs md:text-base lg:text-xl  inline-block text-white p-3 rounded-md
             bg-gradient-to-r from-blue-500 to-blue-600
             hover:from-blue-600 hover:to-blue-700
             transition-all duration-300 ease-in-out

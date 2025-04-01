@@ -49,8 +49,8 @@ function ProjectCard() {
   };
   return (
     <div>
-      <div className="p-2 text-5xl text-gray-300 font-roboto mt-3  font-semibold">
-        <h1>Project</h1>
+      <div className="p-2  text-gray-300 font-roboto mt-3  font-semibold">
+        <h1 className="text-2xl md:text-3xl lg:text-5xl">Project</h1>
       </div>
       <div className="grid lg:grid-cols-2 gap-4 p-4 md:p-10">
         {projects.map((project, index) => (
