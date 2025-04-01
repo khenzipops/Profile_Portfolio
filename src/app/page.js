@@ -6,9 +6,9 @@ import TechnicalSkills from "@/components/TechnicalSkills";
 import ContactText from "@/components/ContactText";
 import FloatingIcons from "../components/FloatingIcons";
 import Cover from "@/components/Cover";
-import useInView from "../hooks/useinView";
 import Contact from "@/components/Contact";
 import ProjectCard from "@/components/ProjectCard";
+import Footer from "@/components/Footers";
 
 export default function Home() {
   const bioRef = useRef(null);
@@ -16,16 +16,16 @@ export default function Home() {
   const contactRef = useRef(null);
 
   return (
-    <div className="h-screen">
+    <div>
       <Navbar />
 
       <div id="/">
         <Cover />
       </div>
 
-      <div id="bio" ref={bioRef} className="bg-gray-600 p-3 h-5"></div>
+      <div id="bio" ref={bioRef} className="bg-gray-700 p-3 h-5"></div>
       <div
-        className="grid grid-cols-4 bg-blue-500 h-15 justify-center text-white sm:p-10 lg:p-4 text-center sm:text-xs md:text-xs lg:text-xl font-poppins
+        className="grid grid-cols-4 bg-blue-500 h-15 justify-center text-white sm:p-10 lg:p-4 text-center sm:text-xs md:text-xs lg:text-xl font-poppins shadow-lg
        "
       >
         <div>
@@ -39,13 +39,17 @@ export default function Home() {
         <ProjectCard />
       </div>
       <div id="TechnicalSkills" ref={skillsRef}>
-        <div>
+        <div className=" p-3">
           <TechnicalSkills />
         </div>
       </div>
 
       <div id="contact" ref={contactRef} className="p-3 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-42 gap-4 items-center">
+          <div className="p-2 text-5xl text-gray-300 font-roboto mt-3  font-semibold">
+            <h1>Contact</h1>
+          </div>
+          <div className="p-2 text-5xl text-gray-300 font-roboto mt-3  font-semibold"></div>
           <div className="flex justify-center">
             <ContactText />
           </div>
@@ -53,6 +57,9 @@ export default function Home() {
             <Contact />
           </div>
         </div>
+      </div>
+      <div className="">
+        <Footer />
       </div>
       <FloatingIcons />
     </div>
