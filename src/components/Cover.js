@@ -9,8 +9,16 @@ export default function Cover() {
           <div className=" h-65">
             <div className=" p-4 lg:ml-12 mt-20">
               <div className="">
-                <h1 className="font-poppins  text-based md:text-2xl lg:text-3xl md:ml-4 lg:ml-4 ">
-                  <span className=" border-4 border-blue-500  p-1">
+                <h1 className="font-poppins text-base md:text-2xl lg:text-3xl md:ml-4 lg:ml-4">
+                  <span
+                    className="inline-block text-white p-2 rounded-md
+            bg-gradient-to-r from-blue-500 to-blue-600
+            hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700
+            transition-all duration-500 ease-[cubic-bezier(0.3,1.5,0.5,0.8)]
+            hover:scale-x-105 hover:scale-y-110  // Stretch horizontally + vertically
+            active:scale-95
+            cursor-pointer"
+                  >
                     Hello there!
                   </span>
                 </h1>
@@ -27,21 +35,39 @@ export default function Cover() {
             </div>
           </div>
           <div className="h-52 gap-4">
-            <div className="grid grid-cols-6 text-center sm:mt-16 md:mt-24 ">
-              <div className="gap-5 col-span-3">
-                <a
-                  href=""
-                  className="font-poppins sm:text-xs md:text-base lg:text-xl  rounded-full text-white bg-blue-500 hover:bg-blue-600 p-2 pl-4 pr-4  "
-                >
-                  Hire Me
+            <div className="grid grid-cols-2 text-center sm:mt-16 md:mt-24 ">
+              <div className="gap-5 ">
+                <a href="">
+                  <span
+                    className="text-xs md:text-base lg:text-xl inline-block text-white p-2 rounded-md
+            bg-gradient-to-r from-blue-500 to-blue-600
+            hover:from-blue-600 hover:to-blue-700
+            transition-all duration-300 ease-in-out
+            hover:shadow-[0_0_15px_-3px_rgba(59,130,246,0.7)] 
+            border border-transparent hover:border-blue-400  
+            cursor-pointer"
+                  >
+                    Hire me
+                  </span>
                 </a>
               </div>
-              <div className="gap-5 col-span-2">
+              <div className="gap-5 justify-start text-left ">
                 <a
-                  href=""
-                  className="font-poppins sm:text-xs md:text-base lg:text-xl  rounded-full text-white bg-blue-500 hover:bg-blue-600 p-2   "
+                  href="https://drive.google.com/drive/folders/10wrP_rn0shetJsqKMmPhoYpTG8kpT0KU?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Certificates
+                  <span
+                    className="text-xs md:text-base lg:text-xl  inline-block text-white p-2 rounded-md
+            bg-gradient-to-r from-blue-500 to-blue-600
+            hover:from-blue-600 hover:to-blue-700
+            transition-all duration-300 ease-in-out
+            hover:shadow-[0_0_15px_-3px_rgba(59,130,246,0.7)] 
+            border border-transparent hover:border-blue-400  
+            cursor-pointer"
+                  >
+                    Certificates
+                  </span>
                 </a>
               </div>
             </div>

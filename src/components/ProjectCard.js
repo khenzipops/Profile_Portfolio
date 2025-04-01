@@ -17,7 +17,18 @@ const projects = [
     title: "ToDo",
     description:
       "Project where I practice Create , Read, Update, Delete operations using Vite, Tailwindcss and TypeScript",
-    image: "/assets/VTrace.png",
+    image: "/assets/Todo.png",
+    alt: "Vtracer Logo",
+    link: "https://kyshr.github.io/fast-trace/#/",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    titlelink: "Visit",
+  },
+  {
+    title: "Climbs",
+    description:
+      "This project was recreated from scratch after deletion, as part of optimizing the original version provided during my OJT at Climbs.",
+    image: "/assets/Todo.png",
     alt: "Vtracer Logo",
     link: "https://kyshr.github.io/fast-trace/#/",
     target: "_blank",
@@ -38,7 +49,7 @@ function ProjectCard() {
   };
   return (
     <div>
-      <div className="p-2 text-5xl text-gray-200 font-roboto m-t-3  font-semibold">
+      <div className="p-2 text-5xl text-gray-300 font-roboto m-t-3  font-semibold">
         <h1>Project</h1>
       </div>
       <>
@@ -47,8 +58,8 @@ function ProjectCard() {
             <div
               key={index}
               className="flex flex-col bg-white bg-opacity-30 border border-blue-600 rounded-lg shadow-sm 
-      md:flex-row md:h-72 hover:bg-blue-50 transition-all duration-300 backdrop-blur-md
-      hover:shadow-md hover:border-blue-700 hover:scale-[1.01]"
+      md:flex-row md:h-72 hover:bg-blue-300 transition-all duration-300 backdrop-blur-md
+      hover:shadow-md hover:border-blue-800 hover:scale-[1.01]"
             >
               {/* Image + Button Container */}
               <div className="md:w-1/3 flex flex-col group">
@@ -90,8 +101,8 @@ function ProjectCard() {
                     {project.title}
                   </h2>
                   <p
-                    className="mt-2 text-sm md:text-base text-gray-700 overflow-y-auto max-h-40
-          transition-colors duration-300 group-hover:text-gray-800"
+                    className="mt-2 text-sm md:text-base text-black overflow-y-auto max-h-40
+          transition-colors duration-800 group-hover:text-black"
                   >
                     {project.description}
                   </p>
