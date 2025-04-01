@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md opacity-95 fixed top-0 left-0 w-full z-50">
+    <nav className="bg-white shadow-md opacity-80 fixed top-0 left-0 w-full z-50">
       <div className="container p-4 mx-auto flex justify-between items-center">
         <a href="/" className="logo">
           <Image
@@ -35,7 +35,7 @@ function Navbar() {
               href="#bio"
               className="text-xl font-poppins font-medium relative p-2   text-textColor before:absolute before:inset-0 before:border-2 before:border-blue-500 before:scale-0 before:transition-transform before:duration-700 hover:before:scale-100"
             >
-              About
+              Project
             </Link>
           </li>
           <li>

@@ -35,18 +35,11 @@ export default function Home() {
         <div>Quality Assurance</div>
         <div>SEO</div>
       </div>
-      <div className="">
+      <div>
         <ProjectCard />
       </div>
-      <div
-        id="TechnicalSkills"
-        ref={skillsRef}
-        className="p-3 sm:p-4 md:p-6 min-h-screen w-full"
-      >
-        <h1 className="text-2xl sm:text-3xl border-l-4 border-mainColor font-roboto font-semibold p-2 mb-4 opacity-40">
-          TECHNICAL SKILL
-        </h1>
-        <div className="p-2 sm:p-3 mb-20 md:mb-44 w-full">
+      <div id="TechnicalSkills" ref={skillsRef}>
+        <div>
           <TechnicalSkills />
         </div>
       </div>
