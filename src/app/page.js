@@ -44,14 +44,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        id="contact"
-        ref={contactRef}
-        className="p-3 mb-32 bg-secondaryColor h-screen"
-      >
-        <h1 className="text-3xl border-l-4 border-mainColor p-2 font-roboto font-semibold opacity-40">
-          CONTACT
-        </h1>
+      <div id="contact" ref={contactRef} className="p-3 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-42 gap-4 items-center">
           <div className="flex justify-center">
             <ContactText />
