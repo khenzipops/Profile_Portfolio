@@ -8,6 +8,7 @@ const skills = [
   { name: "NextJS", svgPath: "/assets/nextJS.svg" },
   { name: "PHP", svgPath: "/assets/PHP.svg" },
   { name: "TailwindCSS", svgPath: "/assets/tailwindcss.svg" },
+  { name: "Vite", svgPath: "/assets/Vite.svg" },
 ];
 
 export default function TechnicalSkills() {

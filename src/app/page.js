@@ -9,6 +9,7 @@ import Cover from "@/components/Cover";
 import Contact from "@/components/Contact";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footers";
+import Divider from "@/components/Divider";
 
 export default function Home() {
   const bioRef = useRef(null);
@@ -22,18 +23,8 @@ export default function Home() {
       <div id="/">
         <Cover />
       </div>
-      <div
-        id="bio"
-        ref={bioRef}
-        className="grid grid-cols-4 bg-blue-500 h-15 justify-center text-white sm:p-10 lg:p-4 text-center sm:text-xs md:text-xs lg:text-xl font-poppins shadow-lg
-       "
-      >
-        <div>
-          <span>Front End Developer</span>
-        </div>
-        <div>UI/UX</div>
-        <div>About</div>
-        <div>Certificate</div>
+      <div id="bio" ref={bioRef} className="">
+        <Divider />
       </div>
       <div className="p-5 m-3">
         <ProjectCard />
