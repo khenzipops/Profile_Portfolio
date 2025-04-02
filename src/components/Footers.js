@@ -67,7 +67,6 @@ function LinkedInIcon() {
     </svg>
   );
 }
-
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-800">

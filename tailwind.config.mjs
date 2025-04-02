@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      rotate: {
+        "y-180": "rotateY(180deg)",
+      },
       scrollBehavior: ["smooth"], //enable smooth scroll
 
       borderRadius: {
