@@ -14,7 +14,7 @@ export default function TechnicalSkills() {
   return (
     <div>
       <div>
-        <h1 className=" text-2xl md:text-3xl lg:text-5xl text-gray-300 font-roboto ml-2  font-semibold w-full">
+        <h1 className=" text-2xl md:text-3xl lg:text-5xl text-blue-400 font-roboto ml-2  font-bold w-full">
           Technical Skills
         </h1>
       </div>

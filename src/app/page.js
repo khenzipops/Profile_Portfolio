@@ -22,9 +22,9 @@ export default function Home() {
       <div id="/">
         <Cover />
       </div>
-
-      <div id="bio" ref={bioRef} className="bg-gray-700 p-3 h-5"></div>
       <div
+        id="bio"
+        ref={bioRef}
         className="grid grid-cols-4 bg-blue-500 h-15 justify-center text-white sm:p-10 lg:p-4 text-center sm:text-xs md:text-xs lg:text-xl font-poppins shadow-lg
        "
       >
@@ -32,8 +32,8 @@ export default function Home() {
           <span>Front End Developer</span>
         </div>
         <div>UI/UX</div>
-        <div>Quality Assurance</div>
-        <div>SEO</div>
+        <div>About</div>
+        <div>Certificate</div>
       </div>
       <div className="p-5 m-3">
         <ProjectCard />
@@ -50,8 +50,10 @@ export default function Home() {
         className="p-5 m-3 border-t-2 border-gray-200 my-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-42 gap-4 items-center">
-          <div className="p-2 text-5xl text-gray-300 font-roboto mt-3  font-semibold">
-            <h1 className="text-2xl md:text-3xl lg:text-5xl">Contact</h1>
+          <div className="p-2 text-5xl text-gray-300 font-roboto mt-3">
+            <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-bold">
+              Contact
+            </h1>
           </div>
 
           <div className="p-2 text-5xl text-gray-300 font-roboto mt-3  font-semibold"></div>
