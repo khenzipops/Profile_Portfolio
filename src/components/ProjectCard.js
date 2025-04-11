@@ -19,7 +19,7 @@ const projects = [
       "Project where I practice Create , Read, Update, Delete operations using Vite, Tailwindcss and TypeScript",
     image: "/assets/Todo.png",
     alt: "Vtracer Logo",
-    link: "https://kyshr.github.io/fast-trace/#/",
+    link: "https://todo-list-c0fh.onrender.com/",
     target: "_blank",
     rel: "noopener noreferrer",
     titlelink: "Visit",
@@ -28,6 +28,17 @@ const projects = [
     title: "Climbs",
     description:
       "This project was recreated from scratch after deletion, as part of optimizing the original version provided during my OJT at Climbs.",
+    image: "/assets/Todo.png",
+    alt: "Vtracer Logo",
+    link: "https://kyshr.github.io/fast-trace/#/",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    titlelink: "Visit",
+  },
+  {
+    title: "Maturity Coconut App Detector",
+    description:
+      "Our group created a mobile app that detects the maturity of coconuts using the phone camera and machine learning. The app analyzes the image and tells whether the coconut is young, mature, or overripe. This project helped us apply our knowledge in AI and mobile development to solve a real-world problem.",
     image: "/assets/Todo.png",
     alt: "Vtracer Logo",
     link: "https://kyshr.github.io/fast-trace/#/",
