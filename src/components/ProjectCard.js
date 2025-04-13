@@ -12,6 +12,7 @@ const projects = [
     target: "_blank",
     rel: "noopener noreferrer",
     titlelink: "Visit",
+    svgPath: "/assets/reactjs.svg",
   },
   {
     title: "ToDo",
@@ -23,6 +24,7 @@ const projects = [
     target: "_blank",
     rel: "noopener noreferrer",
     titlelink: "Visit",
+    svgPath: "/assets/nextJS.svg",
   },
   {
     title: "Climbs",
@@ -34,6 +36,7 @@ const projects = [
     target: "_blank",
     rel: "noopener noreferrer",
     titlelink: "Visit",
+    svgPath: "/assets/nextJS.svg",
   },
   {
     title: "Maturity Coconut App Detector",
@@ -45,6 +48,18 @@ const projects = [
     target: "_blank",
     rel: "noopener noreferrer",
     titlelink: "Visit",
+    svgPath: "/assets/nextJS.svg",
+  },
+  {
+    title: "Campus Security Portal",
+    description: "this project blah blah blah",
+    image: "/assets/Todo.png",
+    alt: "Vtracer Logo",
+    link: "https://kyshr.github.io/fast-trace/#/",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    titlelink: "Visit",
+    svgPath: "/assets/nextJS.svg",
   },
 ];
 
@@ -119,6 +134,14 @@ function ProjectCard() {
                   {project.description}
                 </p>
               </div>
+              {/* Icons of project */}
+
+              {/* <div className="hidden md:flex  mt-4">
+                <img
+                  src={project.svgPath}
+                  className="w-10 h-10 sm:w-14 sm:h-10 object-contain mb-2"
+                />
+              </div> */}
             </div>
           </div>
         ))}

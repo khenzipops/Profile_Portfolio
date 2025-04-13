@@ -9,6 +9,11 @@ const skills = [
   { name: "PHP", svgPath: "/assets/PHP.svg" },
   { name: "TailwindCSS", svgPath: "/assets/tailwindcss.svg" },
   { name: "Vite", svgPath: "/assets/Vite.svg" },
+  { name: "React", svgPath: "/assets/reactjs.svg" },
+  { name: "Express Js", svgPath: "/assets/express-js.svg" },
+  { name: "Typescript", svgPath: "/assets/typescript.svg" },
+  { name: "C++", svgPath: "/assets/C++.svg" },
+  { name: "Javascript", svgPath: "/assets/Javascript.svg" },
 ];
 
 export default function TechnicalSkills() {
@@ -19,7 +24,7 @@ export default function TechnicalSkills() {
           Technical Skills
         </h1>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-10 ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-20 ">
         {skills.map((skill, index) => (
           <div
             key={index}
