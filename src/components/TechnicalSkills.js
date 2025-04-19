@@ -37,7 +37,7 @@ export default function TechnicalSkills() {
               alt={`${skill.name} logo`}
               className="w-12 h-12 sm:w-14 sm:h-14 object-contain mb-2"
             />
-            <h1 className="text-sm sm:text-base text-black font-medium text-center">
+            <h1 className="text-xs sm:text-base text-black font-medium text-center">
               {skill.name}
             </h1>
           </div>
