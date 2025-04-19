@@ -13,7 +13,7 @@ const skills = [
   { name: "Express Js", svgPath: "/assets/express-js.svg" },
   { name: "Typescript", svgPath: "/assets/typescript.svg" },
   { name: "C++", svgPath: "/assets/C++.svg" },
-  { name: "Javascript", svgPath: "/assets/Javascript.svg" },
+  { name: "Javascript", svgPath: "/assets/javascript.svg" },
 ];
 
 export default function TechnicalSkills() {
