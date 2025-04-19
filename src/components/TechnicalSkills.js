@@ -24,7 +24,7 @@ export default function TechnicalSkills() {
           Technical Skills
         </h1>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-20 ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 ">
         {skills.map((skill, index) => (
           <div
             key={index}
