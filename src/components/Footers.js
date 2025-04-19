@@ -82,7 +82,7 @@ export default function Footer() {
             </Link>
             . All Rights Reserved.
           </span>
-          <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+          {/* <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
             <Link
               href="#"
               className="text-white hover:text-gray-900 dark:hover:text-white"
@@ -105,7 +105,7 @@ export default function Footer() {
               <GitHubIcon />
               <span className="sr-only">GitHub account</span>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

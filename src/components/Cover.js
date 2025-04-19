@@ -1,7 +1,12 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
+import Details from "@/components/Details";
 
 export default function Cover() {
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
+  console.log("Modal state:", isDetailOpen);
+
   return (
     <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex md:flex-row md:justify-between  mt-16">
       <div className="lg:p-10 lg:m-16">
@@ -9,19 +14,26 @@ export default function Cover() {
           <div className=" h-65">
             <div className=" p-4 lg:ml-12 mt-16">
               <div className="">
-                <h1 className="font-poppins text-base md:text-1xl lg:text-3xl md:ml-4 lg:ml-4">
+                <button
+                  onClick={() => setIsDetailOpen(true)}
+                  className="font-poppins text-base md:text-1xl lg:text-3xl md:ml-4 lg:ml-4"
+                >
                   <span
                     className="inline-block text-white p-2 rounded-md
-            bg-gradient-to-r from-blue-500 to-blue-600
-            hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700
-            transition-all duration-500 ease-[cubic-bezier(0.3,1.5,0.5,0.8)]
-            hover:scale-x-105 hover:scale-y-110  // Stretch horizontally + vertically
-            active:scale-95
-            cursor-pointer"
+                    bg-gradient-to-r from-blue-500 to-blue-600
+                    hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700
+                    transition-all duration-500
+                    ease-[cubic-bezier(0.3,1.5,0.5,0.8)] hover:scale-x-105
+                    hover:scale-y-110 // Stretch horizontally + vertically
+                    active:scale-95 cursor-pointer"
                   >
-                    Hello there!
+                    hello there! 👋
                   </span>
-                </h1>
+                </button>
+                <Details
+                  isOpen={isDetailOpen}
+                  onClose={() => setIsDetailOpen(false)}
+                />
                 <h1 className="font-poppins text-xl md:text-2xl  lg:text-4xl md:m-4 lg:m-4 font-semibold tracking-normal md:tracking-tighter lg:tracking-tight mt-1">
                   I'm Kenneth Popera,
                 </h1>

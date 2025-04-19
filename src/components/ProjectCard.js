@@ -41,10 +41,10 @@ const projects = [
   {
     title: "Maturity Coconut App Detector",
     description:
-      "Our group created a mobile app that detects the maturity of coconuts using the phone camera and machine learning. The app analyzes the image and tells whether the coconut is young, mature, or overripe. This project helped us apply our knowledge in AI and mobile development to solve a real-world problem.",
+      "Our group created a mobile app that detects the maturity of coconuts using the phone camera and machine learning. The app analyzes the image and tells whether the coconut is young, mature, or overripe.",
     image: "/assets/Todo.png",
     alt: "Vtracer Logo",
-    link: "https://kyshr.github.io/fast-trace/#/",
+    link: "https://drive.google.com/file/d/1FzDpzsdyRmI9G1NmI4EvxHtqf6cpLgVo/view",
     target: "_blank",
     rel: "noopener noreferrer",
     titlelink: "Visit",
@@ -53,9 +53,9 @@ const projects = [
   {
     title: "Campus Security Portal",
     description: "this project blah blah blah",
-    image: "/assets/Todo.png",
+    image: "/assets/campus-security-portal.png",
     alt: "Vtracer Logo",
-    link: "https://kyshr.github.io/fast-trace/#/",
+    link: "https://campus-security-portal-alpha.vercel.app/guard/login",
     target: "_blank",
     rel: "noopener noreferrer",
     titlelink: "Visit",
