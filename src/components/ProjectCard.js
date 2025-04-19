@@ -150,8 +150,14 @@ function ProjectCard() {
 
       {/* Image Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-          <div className="relative max-w-4xl w-full">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={closeModal}
+        >
+          <div
+            className="relative max-w-4xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={closeModal}
               className="absolute -top-10 right-0 text-white hover:text-gray-300 text-3xl"
