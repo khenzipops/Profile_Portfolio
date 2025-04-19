@@ -42,7 +42,7 @@ const projects = [
     title: "Maturity Coconut App Detector",
     description:
       "Our group created a mobile app that detects the maturity of coconuts using the phone camera and machine learning. The app analyzes the image and tells whether the coconut is young, mature, or overripe.",
-    image: "/assets/Coconut.png",
+    image: "/assets/coconut.png",
     alt: "Vtracer Logo",
     link: "https://drive.google.com/file/d/1FzDpzsdyRmI9G1NmI4EvxHtqf6cpLgVo/view",
     target: "_blank",
