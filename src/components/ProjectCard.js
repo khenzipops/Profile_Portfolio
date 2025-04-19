@@ -30,11 +30,11 @@ const projects = [
     title: "Climbs",
     description:
       "This project was recreated from scratch after deletion, as part of optimizing the original version provided during my OJT at Climbs.",
-    image: "/assets/Todo.png",
+    image: "/assets/Climbs.png",
     alt: "Vtracer Logo",
-    link: "https://kyshr.github.io/fast-trace/#/",
-    target: "_blank",
-    rel: "noopener noreferrer",
+    // link: "https://kyshr.github.io/fast-trace/#/",
+    // target: "_blank",
+    // rel: "noopener noreferrer",
     titlelink: "Visit",
     svgPath: "/assets/nextJS.svg",
   },
@@ -42,7 +42,7 @@ const projects = [
     title: "Maturity Coconut App Detector",
     description:
       "Our group created a mobile app that detects the maturity of coconuts using the phone camera and machine learning. The app analyzes the image and tells whether the coconut is young, mature, or overripe.",
-    image: "/assets/Todo.png",
+    image: "/assets/Coconut.png",
     alt: "Vtracer Logo",
     link: "https://drive.google.com/file/d/1FzDpzsdyRmI9G1NmI4EvxHtqf6cpLgVo/view",
     target: "_blank",
@@ -52,7 +52,8 @@ const projects = [
   },
   {
     title: "Campus Security Portal",
-    description: "this project blah blah blah",
+    description:
+      "During my college days, our team collaborated to develop projects, and for the Campus Security Portal, I was assigned to create the front-end.",
     image: "/assets/campus-security-portal.png",
     alt: "Vtracer Logo",
     link: "https://campus-security-portal-alpha.vercel.app/guard/login",
