@@ -37,6 +37,7 @@ const projects = [
     // rel: "noopener noreferrer",
     titlelink: "Visit",
     svgPath: "/assets/nextJS.svg",
+    className: "cursor-not-allowed",
   },
   {
     title: "Maturity Coconut App Detector",

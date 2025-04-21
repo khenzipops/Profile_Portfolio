@@ -16,7 +16,7 @@ export default function Cover() {
             <div className=" p-4 lg:ml-12 mt-16">
               <div className="">
                 <button
-                  // onClick={() => setIsDetailOpen(true)}
+                  onClick={() => setIsDetailOpen(true)}
                   className="font-poppins text-base md:text-1xl lg:text-3xl md:ml-4 lg:ml-4"
                 >
                   <span
@@ -40,9 +40,6 @@ export default function Cover() {
                 </h1>
                 <h1 className="font-bold  text-xl md:text-2xl  lg:text-5xl md:m-3 lg:m-3 font-poppins tracking-tighter md:tracking-tighter lg:tracking-wider">
                   Web Developer
-                </h1>
-                <h1 className=" m-2 font-light  lg:ml-8 text-gray-400 text-based md:text-1xl  lg:text-1xl font-poppins tracking-tighter md:tracking-tight lg:tracking-wider">
-                  Bachelor of Science in Information Technology
                 </h1>
               </div>
             </div>
