@@ -7,7 +7,9 @@ export default function PenguinCursor() {
   useEffect(() => {
     // Check for mobile directly in the effect
     const isMobileDevice =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.innerWidth <= 768; // Add screen width check
 
     if (!isMobileDevice) {
       const handleMouseMove = (e) => {
@@ -20,11 +22,13 @@ export default function PenguinCursor() {
         document.removeEventListener("mousemove", handleMouseMove);
       };
     }
-  }, []); // Remove isMobile dependency
+  }, []);
 
   // Check for mobile directly in the render
   const isMobileDevice =
-    "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    window.innerWidth <= 768; // Add screen width check
   if (isMobileDevice) {
     return null;
   }
