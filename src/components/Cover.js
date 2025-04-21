@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState } from "react";
 import Details from "@/components/Details";
 import WaveHand from "@/components/animation-folder/wavehand";
-import PenguinCursor from "@/components/animation-folder/pinguincursor";
 
 export default function Cover() {
   const [isDetailOpen, setIsDetailOpen] = useState(false);
@@ -11,7 +10,6 @@ export default function Cover() {
 
   return (
     <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex md:flex-row md:justify-between  mt-16">
-      <PenguinCursor />
       <div className="lg:p-10 lg:m-16">
         <div className="h-max">
           <div className=" h-65">
