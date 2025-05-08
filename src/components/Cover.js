@@ -39,7 +39,7 @@ export default function Cover() {
                   I'm Kenneth Popera,
                 </h1>
                 <h1 className="font-bold  text-xl md:text-2xl  lg:text-5xl md:m-3 lg:m-3 font-poppins tracking-tighter md:tracking-tighter lg:tracking-wider">
-                  Web Developer
+                  Frontend Developer
                 </h1>
               </div>
             </div>
