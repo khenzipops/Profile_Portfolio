@@ -162,13 +162,13 @@ function ProjectCard() {
 
               {/* Icons of project */}
 
-              <div className="hidden md:flex  mt-4">
+              {/* <div className="hidden md:flex  mt-4">
                 <img
                   src={icons.svgPath}
                   alt={icons.alt}
                   className="w-10 h-10 sm:w-14 sm:h-10 object-contain mb-2"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         ))}
