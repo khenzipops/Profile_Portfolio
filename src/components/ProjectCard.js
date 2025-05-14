@@ -63,6 +63,29 @@ const projects = [
     titlelink: "Visit",
     svgPath: "/assets/nextJS.svg",
   },
+  {
+    title: "Real Estate Website Assignment",
+    description:
+      "A Next.js and Tailwind CSS project developed to demonstrate my front-end skills for junior web developer positions.",
+    image: "/assets/marci-metzger.png",
+    alt: "Vtracer Logo",
+    link: "https://marci-metzger-two.vercel.app/",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    titlelink: "Visit",
+    svgPath: "/assets/next.svg",
+  },
+];
+
+const icons = [
+  {
+    svgPath: "//assets/next.svg",
+    alt: "next",
+  },
+  {
+    svgPath: "/assets/nextJS.svg",
+    alt: "nextJS",
+  },
 ];
 
 function ProjectCard() {
@@ -121,7 +144,7 @@ function ProjectCard() {
             </div>
 
             {/* Content Area */}
-            <div className="flex flex-col justify-between p-4 w-full md:w-2/3 group">
+            <div className="flex flex-col justify-between p-4 w-full md:w-2/3 group shadow">
               <div>
                 <h2
                   className="text-xl font-bold text-center md:text-left text-gray-800
@@ -136,14 +159,16 @@ function ProjectCard() {
                   {project.description}
                 </p>
               </div>
+
               {/* Icons of project */}
 
-              {/* <div className="hidden md:flex  mt-4">
+              <div className="hidden md:flex  mt-4">
                 <img
-                  src={project.svgPath}
+                  src={icons.svgPath}
+                  alt={icons.alt}
                   className="w-10 h-10 sm:w-14 sm:h-10 object-contain mb-2"
                 />
-              </div> */}
+              </div>
             </div>
           </div>
         ))}
@@ -152,25 +177,25 @@ function ProjectCard() {
       {/* Image Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 "
           onClick={closeModal}
         >
           <div
             className="relative max-w-4xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={closeModal}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300 text-3xl"
-              aria-label="Close modal"
-            >
-              &times;
-            </button>
             <img
               src={selectedImage}
               alt="Enlarged view"
               className="max-h-[90vh] w-full object-contain"
             />
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 bg-black bg-opacity-50 text-white hover:text-red-700 text-3xl rounded-full w-10 h-10 flex items-center justify-center"
+              aria-label="Close modal"
+            >
+              &times;
+            </button>
           </div>
         </div>
       )}

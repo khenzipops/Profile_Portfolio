@@ -28,7 +28,7 @@ export default function TechnicalSkills() {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center p-4 bg-white bg-opacity-30 border border-blue-600 rounded-lg shadow-sm 
+            className="flex flex-col items-center justify-center p-4 bg-white bg-opacity-30 border border-blue-600 rounded-lg shadow-lg 
       hover:bg-blue-300 hover:bg-opacity-50 transition-all duration-300 backdrop-blur-sm
       hover:shadow-inner hover:border-blue-800 hover:scale-[0.95]"
           >
