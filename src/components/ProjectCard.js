@@ -13,6 +13,7 @@ const projects = [
     rel: "noopener noreferrer",
     titlelink: "Visit",
     svgPath: "/assets/reactjs.svg",
+    imgicon: "/asstes/nextjs.svg",
   },
   {
     title: "ToDo",
@@ -26,19 +27,19 @@ const projects = [
     titlelink: "Visit",
     svgPath: "/assets/nextJS.svg",
   },
-  {
-    title: "Climbs",
-    description:
-      "This project was recreated from scratch after deletion, as part of optimizing the original version provided during my OJT at Climbs.",
-    image: "/assets/Climbs.png",
-    alt: "Vtracer Logo",
-    // link: "https://kyshr.github.io/fast-trace/#/",
-    // target: "_blank",
-    // rel: "noopener noreferrer",
-    titlelink: "Visit",
-    svgPath: "/assets/nextJS.svg",
-    className: "cursor-not-allowed",
-  },
+  // {
+  //   title: "Climbs",
+  //   description:
+  //     "This project was recreated from scratch after deletion, as part of optimizing the original version provided during my OJT at Climbs.",
+  //   image: "/assets/Climbs.png",
+  //   alt: "Vtracer Logo",
+  //   link: "https://kyshr.github.io/fast-trace/#/",
+  //   target: "_blank",
+  //   rel: "noopener noreferrer",
+  //   titlelink: "Visit",
+  //   svgPath: "/assets/nextJS.svg",
+  //   className: "cursor-not-allowed",
+  // },
   {
     title: "Maturity Coconut App Detector",
     description:
@@ -74,17 +75,6 @@ const projects = [
     rel: "noopener noreferrer",
     titlelink: "Visit",
     svgPath: "/assets/next.svg",
-  },
-];
-
-const icons = [
-  {
-    svgPath: "//assets/next.svg",
-    alt: "next",
-  },
-  {
-    svgPath: "/assets/nextJS.svg",
-    alt: "nextJS",
   },
 ];
 
@@ -163,18 +153,16 @@ function ProjectCard() {
               {/* Icons of project */}
 
               {/* <div className="hidden md:flex  mt-4">
-                <img
-                  src={icons.svgPath}
-                  alt={icons.alt}
-                  className="w-10 h-10 sm:w-14 sm:h-10 object-contain mb-2"
-                />
+              
+                src={project.svgpath}
+                alt={project.alt}
               </div> */}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Image Modal */}
+      {/* `Image` Modal */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 "
