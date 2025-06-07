@@ -35,10 +35,10 @@ export default function Cover() {
                   isOpen={isDetailOpen}
                   onClose={() => setIsDetailOpen(false)}
                 />
-                <h1 className="font-poppins text-xl md:text-2xl  lg:text-4xl md:m-4 lg:m-4 font-semibold tracking-normal md:tracking-tighter lg:tracking-tight mt-1">
+                <h1 className="font-poppins text-sm  md:text-lg  lg:text-2xl md:m-4 lg:m-4 font-semibold tracking-normal md:tracking-tighter lg:tracking-tight mt-1">
                   I'm Kenneth Popera,
                 </h1>
-                <h1 className="font-bold  text-xl md:text-2xl  lg:text-5xl md:m-3 lg:m-3 font-poppins tracking-tighter md:tracking-tighter lg:tracking-wider">
+                <h1 className="font-bold text-sm  md:text-lg  lg:text-2xl md:m-3 lg:m-3 font-poppins tracking-tighter md:tracking-tighter lg:tracking-wider">
                   Frontend Developer
                 </h1>
               </div>
