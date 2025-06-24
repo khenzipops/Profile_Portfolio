@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 import Details from "@/components/Details";
 // import WaveHand from "@/components/animation-folder/wavehand";
