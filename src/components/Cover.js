@@ -6,7 +6,6 @@ import WaveHand from "@/components/animation-folder/wavehand";
 
 export default function Cover() {
   const [isDetailOpen, setIsDetailOpen] = useState(false);
-  console.log("Modal state:", isDetailOpen);
 
   return (
     <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex md:flex-row md:justify-between  mt-16">
