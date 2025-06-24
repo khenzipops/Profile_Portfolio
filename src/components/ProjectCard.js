@@ -65,9 +65,9 @@ const projects = [
     svgPath: "/assets/nextJS.svg",
   },
   {
-    title: "Real Estate Website Assignment",
+    title: "Frontend Project",
     description:
-      "A Next.js and Tailwind CSS project developed to demonstrate my front-end skills for junior web developer positions.",
+      "A Next.js and Tailwind CSS project developed to demonstrate my front-end skills",
     image: "/assets/marci-metzger.png",
     alt: "Vtracer Logo",
     link: "https://marci-metzger-two.vercel.app/",
