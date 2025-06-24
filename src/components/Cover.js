@@ -47,15 +47,12 @@ export default function Cover() {
       </div>
 
       {/* right side image */}
-      <div className="w-full  flex justify-center ">
-        <Image
-          src="/assets/Portfolio.png"
+      <div className=" flex items-center justify-center ">
+        <img
+          src="/assets/Portfolio1.png"
           alt="profile-image"
-          className="w-full sm:w-auto h-auto"
-          width={600}
-          height={600}
+          className="w-[350px] h-[350px]"
           layout="intrinsic"
-          objectFit="contain"
         />
       </div>
     </div>

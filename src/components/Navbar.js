@@ -59,7 +59,7 @@ function Navbar() {
               href="https://drive.google.com/file/d/1HWklQ2wCcYAUPvmMcfgDk8AerpeYul2B/view"
               target="_blank"
               rel="noopener noreferrer"
-              className=" bg-white rounded-md border mt-1 border-black p-4 text-base relative text-textColor py-1 before:absolute before:inset-0 before:border-2 before:border-blue-500 before:scale-0 before:transition-transform before:duration-700 hover:before:scale-100"
+              className=" bg-white rounded-md mt-1 border-black p-4 relative font-medium text-textColor py-1 before:absolute before:inset-0 before:border-2 before:border-blue-500 before:scale-0 before:transition-transform before:duration-700 hover:before:scale-100"
             >
               Resume
             </Link>
