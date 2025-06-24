@@ -32,7 +32,7 @@ export default function Cover() {
           />
           <p className="font-bold text-blue-500 text-base sm:text-2xl md:text-4xl  text-justify pb-2">
             I'm{" "}
-            <span className="bg-blue-500 p-1 rounded-full text-white pr-24">
+            <span className="bg-blue-500 p-1 hover:bg-blue-800 rounded-full text-white pr-24">
               Khenz
             </span>
           </p>
