@@ -5,11 +5,11 @@ import Navbar from "@/components/Navbar";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import ContactText from "@/components/ContactText";
 import FloatingIcons from "../components/FloatingIcons";
-import Cover from "@/components/Cover";
+import Cover from "@/components/AboutDetails";
 import Contact from "@/components/Contact";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footers";
-import Divider from "@/components/Divider";
+// import Divider from "@/components/Divider";
 
 export default function Home() {
   const bioRef = useRef(null);
@@ -20,11 +20,15 @@ export default function Home() {
     <div>
       <Navbar />
 
-      <div id="/">
+      <div id="/" className="p-5 m-3">
+        <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-bold">
+          About Me
+        </h1>
         <Cover />
       </div>
+
       <div id="bio" ref={bioRef} className="">
-        <Divider />
+        {/* <Divider /> */}
       </div>
       <div className="p-5 m-3">
         <ProjectCard />
@@ -57,7 +61,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="">
+      <div>
         <Footer />
       </div>
       <FloatingIcons />
