@@ -10,6 +10,7 @@ import Contact from "@/components/Contact";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footers";
 import Cover from "@/components/Cover";
+import Education from "@/components/Education";
 // import Divider from "@/components/Divider";
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
       </div>
 
       <div className="p-5 m-3 ">
-        <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-bold">
+        <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-bold font-poppins">
           About Me
         </h1>
         <AboutDetails />
@@ -43,6 +44,10 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="p-5 m-3 border-t-2 border-gray-200 my-6 ">
+        <Education />
+      </div>
+
       <div
         id="contact"
         ref={contactRef}
@@ -50,7 +55,7 @@ export default function Home() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-42 gap-4 items-center">
           <div className="p-2 text-5xl text-gray-300 font-roboto mt-3">
-            <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-bold">
+            <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-bold font-poppins">
               Contact
             </h1>
           </div>

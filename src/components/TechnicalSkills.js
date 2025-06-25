@@ -27,7 +27,7 @@ export default function TechnicalSkills() {
         viewport={{ once: false }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-roboto ml-2 font-bold w-full">
+        <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-poppins ml-2 font-bold w-full ">
           Technical Skills
         </h1>
       </motion.div>
