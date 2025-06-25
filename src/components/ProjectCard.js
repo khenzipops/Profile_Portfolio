@@ -99,7 +99,7 @@ function ProjectCard() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col bg-white bg-opacity-30 border border-blue-600 rounded-lg shadow-md 
+            className="flex flex-col bg-white bg-opacity-90 border border-blue-600 rounded-lg shadow-md 
       md:flex-row md:h-72 hover:bg-blue-300 transition-all duration-300 backdrop-blur-md
       hover:shadow-outer hover:border-blue-800 hover:scale-[0.98]"
           >
@@ -137,14 +137,14 @@ function ProjectCard() {
             <div className="flex flex-col justify-between p-4 w-full md:w-2/3 group shadow">
               <div>
                 <h2
-                  className="text-xl font-bold text-center md:text-left text-gray-800
-          transition-colors duration-300 group-hover:text-blue-700"
+                  className="text-xl font-extrabold text-center md:text-left text-gray-800
+          transition-colors duration-300 group-hover:text-blue-700 font-poppins"
                 >
                   {project.title}
                 </h2>
                 <p
                   className="mt-2 text-sm md:text-base text-black overflow-y-auto max-h-40
-          transition-colors duration-800 group-hover:text-black"
+          transition-colors duration-800 group-hover:text-black font-poppins text-justify"
                 >
                   {project.description}
                 </p>
