@@ -20,7 +20,7 @@ function Education() {
                 src="/assets/liceo-logo.png
              "
                 alt="Liceo"
-                className="w-32"
+                className="w-28"
               />
             </div>
             <div>
