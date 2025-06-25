@@ -3,7 +3,7 @@
 const skills = [
   { name: "HTML", svgPath: "/assets/html.svg" },
   { name: "CSS", svgPath: "/assets/css_3.svg" },
-  { name: "PYTHON", svgPath: "/assets/python.svg" },
+  { name: "Python", svgPath: "/assets/python.svg" },
   { name: "MariaDb", svgPath: "/assets/mariadb.svg" },
   { name: "NextJS", svgPath: "/assets/nextJS.svg" },
   { name: "PHP", svgPath: "/assets/PHP.svg" },
@@ -37,7 +37,7 @@ export default function TechnicalSkills() {
               alt={`${skill.name} logo`}
               className="w-12 h-12 sm:w-14 sm:h-14 object-contain mb-2"
             />
-            <h1 className="text-xs sm:text-base text-black font-medium text-center">
+            <h1 className="text-xs sm:text-base text-black font-medium text-center font-poppins">
               {skill.name}
             </h1>
           </div>
