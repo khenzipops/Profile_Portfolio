@@ -10,22 +10,6 @@ export default function Cover() {
     <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex md:flex-row md:justify-between p-4 border-b-2">
       <div className="flex items-start justify-center mt-16">
         <div>
-          {/* <button
-            onClick={() => setIsDetailOpen(true)}
-            className="font-poppins text-base md:text-1xl lg:text-3xl md:ml-4 lg:ml-4"
-          >
-            <span
-              className="inline-block text-white p-2 rounded-md
-                    bg-gradient-to-r from-blue-500 to-blue-600
-                    hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700
-                    transition-all duration-500
-                    ease-[cubic-bezier(0.3,1.5,0.5,0.8)] hover:scale-x-105
-                    hover:scale-y-110 // Stretch horizontally + vertically
-                    active:scale-95 cursor-pointer"
-            >
-              hello there! <WaveHand />
-            </span>
-          </button> */}
           <Details
             isOpen={isDetailOpen}
             onClose={() => setIsDetailOpen(false)}
