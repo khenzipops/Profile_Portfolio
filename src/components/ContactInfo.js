@@ -4,7 +4,7 @@ import { GrGithub, GrPhone, GrLinkedinOption } from "react-icons/gr";
 
 export default function ContactInfo() {
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg h-96">
+    <div className="max-w-md mx-auto p-6 bg-white h-96">
       <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
         CONTACT
       </h2>

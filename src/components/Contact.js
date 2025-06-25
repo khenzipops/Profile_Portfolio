@@ -56,7 +56,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 border rounded-lg shadow-lg bg-white">
+    <div className="max-w-md mx-auto p-4 rounded-lg  bg-white">
       <h2 className="text-2xl font-semibold mb-4 text-center">Contact</h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
