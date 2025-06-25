@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useRef, useEffect, useState } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setFeedback(null); // Reset feedback message
+    setFeedback(null);
 
     try {
       const response = await fetch(
@@ -38,7 +39,7 @@ export default function Contact() {
           type: "success",
           message: "✅ Message sent successfully!",
         });
-        setFormData({ fullname: "", email: "", message: "" }); // Reset form
+        setFormData({ fullname: "", email: "", message: "" });
       } else {
         setFeedback({
           type: "error",
@@ -55,12 +56,31 @@ export default function Contact() {
     setLoading(false);
   };
 
+  // 👇 Framer Motion Animation Logic
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const inView = useInView(ref, { margin: "-100px", once: false });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    } else {
+      controls.start({ opacity: 0, y: 40 });
+    }
+  }, [inView, controls]);
+
   return (
-    <div className="max-w-md mx-auto p-4 rounded-lg  bg-white">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={controls}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="max-w-md mx-auto p-4 rounded-lg bg-white"
+    >
       <h2 className="text-2xl font-semibold mb-4 text-center">Contact</h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Full Name Field */}
+        {/* Full Name */}
         <div className="relative">
           <input
             type="text"
@@ -74,13 +94,13 @@ export default function Contact() {
           />
           <label
             htmlFor="fullname"
-            className="absolute text-sm text-gray-600 duration-500 transform -translate-y-8 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+            className="absolute text-sm text-gray-600 duration-500 transform -translate-y-8 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
           >
             Full Name
           </label>
         </div>
 
-        {/* Email Field */}
+        {/* Email */}
         <div className="relative">
           <input
             type="email"
@@ -94,13 +114,13 @@ export default function Contact() {
           />
           <label
             htmlFor="email"
-            className="absolute text-sm text-gray-600 duration-500 transform -translate-y-8 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+            className="absolute text-sm text-gray-600 duration-500 transform -translate-y-8 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
           >
             Email Address
           </label>
         </div>
 
-        {/* Message Field */}
+        {/* Message */}
         <div className="relative">
           <textarea
             name="message"
@@ -113,13 +133,13 @@ export default function Contact() {
           />
           <label
             htmlFor="message"
-            className="absolute text-sm text-gray-600 duration-500 transform -translate-y-8 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+            className="absolute text-sm text-gray-600 duration-500 transform -translate-y-8 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
           >
             Your Message
           </label>
         </div>
 
-        {/* Submit Button */}
+        {/* Submit */}
         <button
           type="submit"
           className={`w-full p-3 rounded-lg text-white font-medium ${
@@ -158,7 +178,7 @@ export default function Contact() {
           )}
         </button>
       </form>
-      {/* ✅ Show feedback message BELOW the form */}
+
       {feedback && (
         <p
           className={`mt-4 p-2 rounded text-sm text-center ${
@@ -170,6 +190,6 @@ export default function Contact() {
           {feedback.message}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 }
