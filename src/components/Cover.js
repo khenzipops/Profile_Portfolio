@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const rotatingTexts = [
   "KENNETH POPERA",
-  "FROM THE PHILIPPINES",
+  "FROM PHILIPPINES",
   "FRONTEND DEVELOPER",
 ];
 
