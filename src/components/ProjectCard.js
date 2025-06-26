@@ -68,7 +68,7 @@ const projects = [
   },
   {
     title: "UI DESIGN",
-    description: "Simple project for User Interface Design",
+    description: "Simple project for User Interface Design.",
 
     image: "/assets/marci-metzger.png",
     alt: "Vtracer Logo",
