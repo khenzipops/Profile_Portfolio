@@ -119,12 +119,12 @@ function ProjectCard() {
               initial={{ opacity: 0, y: 50 }}
               animate={controls}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="flex flex-col bg-white bg-opacity-90 border border-blue-100 rounded-lg shadow-md 
-              md:flex-row md:h-72 hover:bg-blue-50 transition-all duration-300 backdrop-blur-base
-              hover:shadow-inner hover:border-blue-800 hover:scale-[0.98]"
+              className="flex flex-col bg-white bg-opacity-90 border border-blue-500 rounded-lg shadow-md 
+              md:flex-row md:h-72  transition-all duration-300 backdrop-blur-base
+              hover:shadow-inner hover:border-black hover:scale-[0.98]"
             >
               {/* Image + Button */}
-              <div className="md:w-1/3 flex flex-col group">
+              <div className="md:w-1/3 flex flex-col group p-2">
                 {project.image && (
                   <div
                     className="w-full h-48 md:h-3/4 overflow-hidden rounded-t-lg md:rounded-none md:rounded-l-lg
@@ -145,11 +145,13 @@ function ProjectCard() {
                   href={project.link}
                   target={project.target}
                   rel={project.rel}
-                  className="bg-blue-500 hover:bg-blue-600 py-2 px-4 m-2 rounded-lg text-white text-center 
-                  transition-all duration-300 font-medium md:mx-auto md:mb-2 md:w-11/12
-                  hover:shadow-lg hover:-translate-y-0.5"
+                  className="text-center items-center before:ease relative h-7 w-full overflow-hidden 
+                  border border-blue-800 text-black shadow-2xl transition-all before:absolute before:top-1/2 
+                  before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-blue-500 
+                  before:duration-300 hover:text-white hover:shadow-blue-500 hover:before:h-64 
+                  hover:before:-translate-y-32 mt-2 rounded-md"
                 >
-                  {project.titlelink}
+                  <span className="relative z-10">{project.titlelink}</span>
                 </a>
               </div>
 

@@ -59,8 +59,8 @@ export default function TechnicalSkills() {
                 delay: index * 0.05,
               }}
               className="flex flex-col items-center justify-center p-4 bg-white bg-opacity-30 border border-blue-600 rounded-lg shadow-lg 
-                hover:bg-blue-300 hover:bg-opacity-50 transition-all duration-300 backdrop-blur-sm
-                hover:shadow-inner hover:border-blue-800 hover:scale-[0.95]"
+                hover:bg-opacity-50 transition-all duration-300 backdrop-blur-sm
+                hover:shadow-inner hover:border-black hover:scale-[0.95]"
             >
               <img
                 src={skill.svgPath}
