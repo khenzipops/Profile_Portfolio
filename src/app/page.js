@@ -26,9 +26,6 @@ export default function Home() {
       </div>
 
       <div className="p-5 m-3 ">
-        <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-bold font-poppins">
-          About Me
-        </h1>
         <AboutDetails />
       </div>
 

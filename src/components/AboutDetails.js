@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import Details from "@/components/Details";
@@ -6,11 +7,9 @@ import Details from "@/components/Details";
 export default function Cover() {
   const [isDetailOpen, setIsDetailOpen] = useState(false);
 
-  // Refs for sections
   const leftRef = useRef(null);
   const rightRef = useRef(null);
 
-  // Control animation manually
   const leftControls = useAnimation();
   const rightControls = useAnimation();
 
@@ -34,56 +33,69 @@ export default function Cover() {
   }, [isRightInView, rightControls]);
 
   return (
-    <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex md:flex-row md:justify-between p-4 border-b-2">
-      {/* Left Side Text */}
-      <motion.div
-        ref={leftRef}
-        initial={{ opacity: 0, x: -50 }}
-        animate={leftControls}
+    <div className="w-full p-4 space-y-6 border-b-2">
+      {/* Header */}
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex items-start justify-center mt-16"
+        className="text-2xl sm:text-3xl lg:text-5xl text-blue-400 font-bold font-poppins text-center lg:text-left"
       >
-        <div>
-          <Details
-            isOpen={isDetailOpen}
-            onClose={() => setIsDetailOpen(false)}
-          />
-          <p className="font-bold text-blue-500 text-base sm:text-2xl md:text-4xl  text-justify pb-2">
-            I'm{" "}
-            <span className="bg-blue-500 p-1 hover:bg-blue-800 rounded-full text-white pr-24">
-              Khenz
-            </span>
-          </p>
-          <p className="text-base font-poppins  text-justify pb-2">
-            I'm a Frontend Developer from the Cagayan de Oro City experience
-            using Next.js and Vite. I specialize in building responsive and
-            functional web applications using Next Js, Tailwind CSS, and
-            Express.js, with MongoDB for backend support.
-          </p>
-          <p className="text-base font-poppins text-justify">
-            I graduated with a BS in Information Technology from the University
-            of Science and Technology of Southern Philippines. I'm passionate
-            about creating clean, user-friendly web experiences and currently
-            focused on building simple projects to expand my skills and
-            knowledge.
-          </p>
-        </div>
-      </motion.div>
+        About Me
+      </motion.h1>
 
-      {/* Right Side Image */}
-      <motion.div
-        ref={rightRef}
-        initial={{ opacity: 0, x: 50 }}
-        animate={rightControls}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-        className="flex items-center justify-center p-6"
-      >
-        <img
-          src="/assets/Portfolio.png"
-          alt="profile-image"
-          className="w-[350px] h-[350px] rounded-full shadow-lg border-2 border-blue-500"
-        />
-      </motion.div>
+      {/* Main Content */}
+      <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-4">
+        {/* Left Side Text */}
+        <motion.div
+          ref={leftRef}
+          initial={{ opacity: 0, x: -50 }}
+          animate={leftControls}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex items-start justify-center lg:justify-start mt-8 lg:mt-0 px-2"
+        >
+          <div className="max-w-xl">
+            <Details
+              isOpen={isDetailOpen}
+              onClose={() => setIsDetailOpen(false)}
+            />
+            <p className="font-bold text-blue-500 text-base sm:text-xl md:text-3xl text-justify pb-2">
+              I'm{" "}
+              <span className="bg-blue-500 p-1 hover:bg-blue-800 rounded-full text-white pr-8">
+                Khenz
+              </span>
+            </p>
+            <p className="text-sm sm:text-base font-poppins text-justify pb-2">
+              I'm a Frontend Developer from Cagayan de Oro City with experience
+              in Next.js and Vite. I specialize in building responsive and
+              functional web applications using Next.js, Tailwind CSS, and
+              Express.js, with MongoDB for backend support.
+            </p>
+            <p className="text-sm sm:text-base font-poppins text-justify">
+              I graduated with a BS in Information Technology from the
+              University of Science and Technology of Southern Philippines. I'm
+              passionate about creating clean, user-friendly web experiences and
+              currently focused on building simple projects to expand my skills
+              and knowledge.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Right Side Image */}
+        <motion.div
+          ref={rightRef}
+          initial={{ opacity: 0, x: 50 }}
+          animate={rightControls}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          className="flex justify-center items-center mt-8 lg:mt-0"
+        >
+          <img
+            src="/assets/Portfolio.png"
+            alt="profile-image"
+            className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full shadow-lg border-2 border-blue-500 object-cover"
+          />
+        </motion.div>
+      </div>
     </div>
   );
 }
