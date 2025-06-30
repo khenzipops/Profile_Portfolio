@@ -12,6 +12,7 @@ import Footer from "@/components/Footers";
 import Cover from "@/components/Cover";
 import Education from "@/components/Education";
 // import Divider from "@/components/Divider";
+// import Figma from "@/components/figma-folder/figma";
 
 export default function Home() {
   const bioRef = useRef(null);
@@ -40,8 +41,13 @@ export default function Home() {
           <TechnicalSkills />
         </div>
       </div>
+      {/* <div id="TechnicalSkills" ref={skillsRef}>
+        <div className=" p-5 m-3 border-t-2 border-gray-200 my-6">
+          <Figma />
+        </div>
+      </div> */}
 
-      <div className="p-5 m-3 border-t-2 border-gray-200 my-6 ">
+      <div className="m-3 border-t-2 border-gray-200 my-6 ">
         <Education />
       </div>
 

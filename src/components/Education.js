@@ -27,14 +27,21 @@ function Education() {
     >
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-center sm:justify-start gap-2 sm:gap-4 mb-6 text-center sm:text-left">
-        <h1 className="text-xl md:text-3xl lg:text-5xl text-blue-400 font-bold font-poppins">
-          Education Journey
-        </h1>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-poppins ml-2 font-bold w-full ">
+            Education Journey
+          </h1>
+        </motion.div>
         <GraduationCap className="w-8 h-8 md:w-10 md:h-10 text-blue-400" />
       </div>
 
       {/* Education Cards */}
-      <div className="w-full flex flex-col lg:flex-row gap-6">
+      <div className="w-full flex flex-col lg:flex-row gap-6 p-2">
         {/* Liceo */}
         <div className="flex flex-col items-center justify-center w-full lg:w-1/2 border border-blue-300 hover:border-teal-800 rounded-md overflow-hidden">
           <div className="w-fit p-4">
