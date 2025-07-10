@@ -129,19 +129,6 @@ export default function Cover() {
         >
           Crafting elegant frontend solutions for modern web challenges.
         </motion.p>
-        <motion.div
-          className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
-          initial={{ opacity: isHydrated ? 0 : 1 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            Get Started
-          </button>
-          <button className="px-8 py-3 bg-transparent border-2 border-blue-400 text-blue-200 hover:bg-blue-900/30 rounded-lg transition-colors duration-300">
-            Learn More
-          </button>
-        </motion.div>
 
         {/* Features Section */}
         <motion.div
