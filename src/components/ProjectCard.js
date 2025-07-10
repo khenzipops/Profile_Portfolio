@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
-import { useRef, useEffect } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useHydrated, useInViewWithHydration } from "@/hooks/useinView";
 
 const projects = [
   {
@@ -82,6 +82,7 @@ const projects = [
 
 function ProjectCard() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const isHydrated = useHydrated();
 
   const openModal = (image) => {
     setSelectedImage(image);
@@ -102,21 +103,21 @@ function ProjectCard() {
         {projects.map((project, index) => {
           const ref = useRef(null);
           const controls = useAnimation();
-          const inView = useInView(ref, { margin: "-50px" });
+          const inView = useInViewWithHydration(ref, { margin: "-50px" });
 
           useEffect(() => {
-            if (inView) {
+            if (isHydrated && inView) {
               controls.start({ opacity: 1, y: 0 });
-            } else {
+            } else if (isHydrated) {
               controls.start({ opacity: 0, y: 50 });
             }
-          }, [inView, controls]);
+          }, [inView, controls, isHydrated]);
 
           return (
             <motion.div
               key={index}
               ref={ref}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? 50 : 0 }}
               animate={controls}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="flex flex-col bg-white bg-opacity-90 border border-blue-500 rounded-lg shadow-md 

@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Details from "@/components/Details";
+import { useHydrated, useInViewWithHydration } from "@/hooks/useinView";
 
 export default function Cover() {
   const [isDetailOpen, setIsDetailOpen] = useState(false);
+  const isHydrated = useHydrated();
 
   const leftRef = useRef(null);
   const rightRef = useRef(null);
@@ -13,30 +15,30 @@ export default function Cover() {
   const leftControls = useAnimation();
   const rightControls = useAnimation();
 
-  const isLeftInView = useInView(leftRef, { margin: "-50px" });
-  const isRightInView = useInView(rightRef, { margin: "-50px" });
+  const isLeftInView = useInViewWithHydration(leftRef, { margin: "-50px" });
+  const isRightInView = useInViewWithHydration(rightRef, { margin: "-50px" });
 
   useEffect(() => {
-    if (isLeftInView) {
+    if (isHydrated && isLeftInView) {
       leftControls.start({ opacity: 1, x: 0 });
-    } else {
+    } else if (isHydrated) {
       leftControls.start({ opacity: 0, x: -50 });
     }
-  }, [isLeftInView, leftControls]);
+  }, [isLeftInView, leftControls, isHydrated]);
 
   useEffect(() => {
-    if (isRightInView) {
+    if (isHydrated && isRightInView) {
       rightControls.start({ opacity: 1, x: 0 });
-    } else {
+    } else if (isHydrated) {
       rightControls.start({ opacity: 0, x: 50 });
     }
-  }, [isRightInView, rightControls]);
+  }, [isRightInView, rightControls, isHydrated]);
 
   return (
     <div className="w-full p-4 space-y-6 border-b-2">
       {/* Header */}
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? -20 : 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-2xl sm:text-3xl lg:text-5xl text-blue-400 font-bold font-poppins text-center lg:text-left"
@@ -49,7 +51,7 @@ export default function Cover() {
         {/* Left Side Text */}
         <motion.div
           ref={leftRef}
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: isHydrated ? 0 : 1, x: isHydrated ? -50 : 0 }}
           animate={leftControls}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex items-start justify-center lg:justify-start mt-8 lg:mt-0 px-2"
@@ -84,7 +86,7 @@ export default function Cover() {
         {/* Right Side Image */}
         <motion.div
           ref={rightRef}
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: isHydrated ? 0 : 1, x: isHydrated ? 50 : 0 }}
           animate={rightControls}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           className="flex justify-center items-center mt-8 lg:mt-0"

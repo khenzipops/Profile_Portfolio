@@ -1,26 +1,28 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { GraduationCap, MapPin, Calendar, BookOpen } from "lucide-react";
+import { useHydrated, useInViewWithHydration } from "@/hooks/useinView";
 
 function Education() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false });
+  const inView = useInViewWithHydration(ref, { once: false });
   const controls = useAnimation();
+  const isHydrated = useHydrated();
 
   useEffect(() => {
-    if (inView) {
+    if (isHydrated && inView) {
       controls.start({ opacity: 1, y: 0 });
-    } else {
+    } else if (isHydrated) {
       controls.start({ opacity: 0, y: 50 });
     }
-  }, [inView, controls]);
+  }, [inView, controls, isHydrated]);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? 50 : 0 }}
       animate={controls}
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="px-4 md:px-8"
@@ -28,7 +30,7 @@ function Education() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-center sm:justify-start gap-2 sm:gap-4 mb-6 text-center sm:text-left">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? -20 : 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.6 }}

@@ -1,21 +1,37 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-function View(ref) {
-  const [isInView, setIsInView] = useState(false);
+export function useHydrated() {
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  return isHydrated;
+}
+
+export function useInViewWithHydration(ref, options = {}) {
+  const [isInView, setIsInView] = useState(false);
+  const isHydrated = useHydrated();
+
+  useEffect(() => {
+    if (!isHydrated || !ref.current) return;
+
     const observer = new IntersectionObserver(
-      ([entry]) => setIsInView(entry.isIntersecting),
-      { threshold: 0.2 }
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1, ...options }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(ref.current);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
     };
-  }, [ref]);
+  }, [ref, isHydrated, options]);
 
   return isInView;
 }
-export default View;

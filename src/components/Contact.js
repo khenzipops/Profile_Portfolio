@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useHydrated, useInViewWithHydration } from "@/hooks/useinView";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ export default function Contact() {
 
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState(null);
+  const isHydrated = useHydrated();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,20 +61,20 @@ export default function Contact() {
   // 👇 Framer Motion Animation Logic
   const ref = useRef(null);
   const controls = useAnimation();
-  const inView = useInView(ref, { margin: "-100px", once: false });
+  const inView = useInViewWithHydration(ref, { margin: "-100px", once: false });
 
   useEffect(() => {
-    if (inView) {
+    if (isHydrated && inView) {
       controls.start({ opacity: 1, y: 0 });
-    } else {
+    } else if (isHydrated) {
       controls.start({ opacity: 0, y: 40 });
     }
-  }, [inView, controls]);
+  }, [inView, controls, isHydrated]);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? 40 : 0 }}
       animate={controls}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="max-w-md mx-auto p-4 rounded-lg bg-white"

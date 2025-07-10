@@ -1,6 +1,8 @@
 "use client";
 import { useRef, useEffect } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useHydrated, useInViewWithHydration } from "@/hooks/useinView";
+
 const skills = [
   { name: "HTML", svgPath: "/assets/html.svg" },
   { name: "CSS", svgPath: "/assets/css_3.svg" },
@@ -18,11 +20,13 @@ const skills = [
 ];
 
 export default function TechnicalSkills() {
+  const isHydrated = useHydrated();
+
   return (
     <div>
       {/* Title */}
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? -20 : 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
         transition={{ duration: 0.6 }}
@@ -37,21 +41,21 @@ export default function TechnicalSkills() {
         {skills.map((skill, index) => {
           const ref = useRef(null);
           const controls = useAnimation();
-          const inView = useInView(ref, { margin: "-50px" });
+          const inView = useInViewWithHydration(ref, { margin: "-50px" });
 
           useEffect(() => {
-            if (inView) {
+            if (isHydrated && inView) {
               controls.start({ opacity: 1, y: 0 });
-            } else {
+            } else if (isHydrated) {
               controls.start({ opacity: 0, y: 30 });
             }
-          }, [inView, controls]);
+          }, [inView, controls, isHydrated]);
 
           return (
             <motion.div
               key={index}
               ref={ref}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? 30 : 0 }}
               animate={controls}
               transition={{
                 duration: 0.4,
