@@ -90,7 +90,7 @@ export default function Contact() {
             id="fullname"
             value={formData.fullname}
             onChange={handleChange}
-            className="block px-2.5 pb-2 pt-3 w-full text-sm text-gray-500 rounded-lg border-2 border-blue-500 hover:border-blue-800 appearance-none focus:outline-0 focus:ring-0 focus:border-blue-600 peer"
+            className="block px-2.5 pb-2 pt-3 w-full text-sm text-gray-500 rounded-lg border border-blue-500 hover:border-blue-800 appearance-none focus:outline-0 focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
@@ -110,7 +110,7 @@ export default function Contact() {
             id="email"
             value={formData.email}
             onChange={handleChange}
-            className="block px-2.5 pb-2 pt-3 w-full text-sm text-gray-500 rounded-lg border-2 border-blue-500 hover:border-blue-800 appearance-none focus:outline-0 focus:ring-0 focus:border-blue-600 peer"
+            className="block px-2.5 pb-2 pt-3 w-full text-sm text-gray-500 rounded-lg border border-blue-500 hover:border-blue-800 appearance-none focus:outline-0 focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
@@ -129,7 +129,7 @@ export default function Contact() {
             id="message"
             value={formData.message}
             onChange={handleChange}
-            className="block px-2.5 pb-2 pt-3 w-full text-sm text-gray-500 rounded-lg border-2 border-blue-500 hover:border-blue-800 appearance-none focus:outline-0 focus:ring-0 focus:border-blue-600 peer h-24 resize-none"
+            className="block px-2.5 pb-2 pt-3 w-full text-sm text-gray-500 rounded-lg border border-blue-500 hover:border-blue-800 appearance-none focus:outline-0 focus:ring-0 focus:border-blue-600 peer h-24 resize-none"
             placeholder=" "
             required
           />
