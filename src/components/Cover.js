@@ -1,104 +1,10 @@
-// import { AnimatePresence, motion } from "framer-motion";
-// import { useEffect, useState } from "react";
-
-// const rotatingTexts = [
-//   "KENNETH POPERA",
-//   "FROM PHILIPPINES",
-//   "FRONTEND DEVELOPER",
-// ];
-
-// function Cover() {
-//   const [index, setIndex] = useState(0);
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setIndex((prev) => (prev + 1) % rotatingTexts.length);
-//     }, 4000); // Change every 2 seconds
-
-//     return () => clearInterval(interval);
-//   }, []);
-//   return (
-//     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-bl">
-//       <div className="relative min-h-screen w-full bg-gray-50 overflow-hidden flex flex-col items-center justify-center text-center px-6 py-12">
-//         {/* Blurred Animated Background Blobs */}
-//         <motion.div
-//           initial={{ y: -100, opacity: 0.4 }}
-//           animate={{ y: 100 }}
-//           transition={{
-//             duration: 5,
-//             repeat: Infinity,
-//             repeatType: "reverse",
-//             ease: "easeInOut",
-//           }}
-//           className="absolute w-96 h-96 bg-red-500 rounded-full blur-sm opacity-75 top-0 left-1/4 z-0"
-//         />
-//         <motion.div
-//           initial={{ x: 100, opacity: 0.4 }}
-//           animate={{ x: -100 }}
-//           transition={{
-//             duration: 9,
-//             repeat: Infinity,
-//             repeatType: "reverse",
-//             ease: "easeInOut",
-//           }}
-//           className="absolute w-40 h-40 bg-indigo-900 rounded-full blur-sm opacity-60 left-2 right-1/3 z-0"
-//         />
-//         <motion.div
-//           initial={{ x: 100, opacity: 0.4 }}
-//           animate={{ x: -100 }}
-//           transition={{
-//             duration: 7,
-//             repeat: Infinity,
-//             repeatType: "mirror",
-//             ease: "easeInOut",
-//           }}
-//           className="absolute w-40 h-40 bg-green-400 rounded-full blur-sm opacity-60 right-5 z-0"
-//         />
-
-//         <motion.div
-//           initial={{ y: 100, opacity: 0.4 }}
-//           animate={{ y: -100 }}
-//           transition={{
-//             duration: 10,
-//             repeat: Infinity,
-//             repeatType: "mirror",
-//             ease: "easeInOut",
-//           }}
-//           className="absolute w-80 h-80 bg-indigo-400 rounded-full blur-sm opacity-60 bottom-5 right-1/3 z-0"
-//         />
-
-//         {/* Content */}
-//         <div className="z-10">
-//           <p className="text-md lg:text-3xl text-blue-500 mb-2 font-arial font-extrabold">
-//             HELLO I'M
-//           </p>
-//           <AnimatePresence mode="wait">
-//             <motion.p
-//               key={rotatingTexts[index]}
-//               initial={{ opacity: 0, y: -30 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               exit={{ opacity: 0, y: 30 }}
-//               transition={{ duration: 0.6, ease: "easeInOut" }}
-//               className="text-xl font-extrabold text-blue-500 font-arial lg:text-7xl"
-//             >
-//               {rotatingTexts[index]}
-//             </motion.p>
-//           </AnimatePresence>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Cover;
-// app/page.jsx
 import { motion } from "framer-motion";
 import { useHydrated } from "@/hooks/useinView";
 
 export default function Cover() {
   const isHydrated = useHydrated();
-
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-blue-800 via-blue-900 to-blue-700">
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white">
       {/* Animated Background */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -106,8 +12,8 @@ export default function Cover() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]">
-          <div className="from-transparent via-blue-500/10 to-transparent h-full w-full animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center, var(--tw-gradient-stops))]">
+          <div className="from-transparent via-gray-200/20 to-transparent h-full w-full animate-pulse"></div>
         </div>
       </motion.div>
 
@@ -118,11 +24,11 @@ export default function Cover() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+        <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 tracking-tight">
           Kenneth G. Popera
         </h1>
         <motion.p
-          className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto"
+          className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto"
           initial={{ opacity: isHydrated ? 0 : 1 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -164,15 +70,14 @@ export default function Cover() {
 // Feature Card Component
 const FeatureCard = ({ icon, title, description }) => {
   const isHydrated = useHydrated();
-
   return (
     <motion.div
-      className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-blue-500/20 hover:border-blue-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
+      className="bg-white border border-gray-200 p-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-gray-200/30"
       whileHover={isHydrated ? { y: -5 } : {}}
     >
-      <div className="text-3xl mb-4 text-blue-300">{icon}</div>
-      <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-      <p className="text-blue-200 text-sm">{description}</p>
+      <div className="text-3xl mb-4 text-gray-800">{icon}</div>
+      <h3 className="text-xl font-semibold text-black mb-2">{title}</h3>
+      <p className="text-gray-600 text-sm">{description}</p>
     </motion.div>
   );
 };
@@ -180,7 +85,6 @@ const FeatureCard = ({ icon, title, description }) => {
 // Animated Particles Component (Fixed)
 const ParticleBackground = () => {
   const isHydrated = useHydrated();
-
   // Generate particles on client side only
   const particles = isHydrated
     ? Array.from({ length: 20 }, (_, i) => ({
@@ -193,13 +97,12 @@ const ParticleBackground = () => {
         yDistance: Math.random() * 100 - 50,
       }))
     : [];
-
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute bg-blue-400/20 rounded-full"
+          className="absolute bg-gray-300/30 rounded-full"
           style={{
             width: particle.size,
             height: particle.size,
