@@ -84,7 +84,7 @@ function Education() {
               ].map((skill, i) => (
                 <span
                   key={i}
-                  className="border-2 border-blue-500 px-2 py-1 rounded-lg text-white bg-blue-500 hover:bg-blue-800 text-xs sm:text-sm font-poppins"
+                  className="border-2 border-blue-500 px-2 py-1 rounded-lg text-gray-800 bg-white hover:bg-blue-500 hover:text-white text-xs sm:text-sm font-poppins"
                 >
                   {skill}
                 </span>
@@ -133,7 +133,7 @@ function Education() {
               ].map((subject, i) => (
                 <span
                   key={i}
-                  className="border-2 border-blue-500 px-2 py-1 rounded-lg text-white bg-blue-500 hover:bg-blue-800 text-xs sm:text-sm font-poppins"
+                  className="border-2 border-blue-500 px-2 py-1 rounded-lg text-gray-800 bg-white hover:bg-blue-500 hover:text-white text-xs sm:text-sm font-poppins"
                 >
                   {subject}
                 </span>
