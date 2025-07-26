@@ -121,8 +121,8 @@ function ProjectCard() {
               animate={controls}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="flex flex-col bg-white bg-opacity-90 border border-blue-500 rounded-lg shadow-md 
-              md:flex-row md:h-72  transition-all duration-300 backdrop-blur-base
-              hover:shadow-inner hover:border-black hover:scale-[0.98]"
+              md:flex-row md:h-72  
+              hover:shadow-outer hover:border-black"
             >
               {/* Image + Button */}
               <div className="md:w-1/3 flex flex-col group p-2">
