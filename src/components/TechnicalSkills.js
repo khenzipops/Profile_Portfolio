@@ -62,9 +62,9 @@ export default function TechnicalSkills() {
                 ease: "easeOut",
                 delay: index * 0.05,
               }}
-              className="flex flex-col items-center justify-center p-4 bg-white bg-opacity-30 border border-blue-600 rounded-lg shadow-lg 
+              className="flex flex-col items-center justify-center p-4 bg-white bg-opacity-30 border border-blue-600 rounded-lg
                 hover:bg-opacity-50 transition-all duration-300 
-                hover:shadow-outer hover:border-black "
+                hover:border-black "
             >
               <img
                 src={skill.svgPath}
