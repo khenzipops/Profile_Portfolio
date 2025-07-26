@@ -37,7 +37,7 @@ export default function TechnicalSkills() {
       </motion.div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 ">
         {skills.map((skill, index) => {
           const ref = useRef(null);
           const controls = useAnimation();
@@ -63,15 +63,15 @@ export default function TechnicalSkills() {
                 delay: index * 0.05,
               }}
               className="flex flex-col items-center justify-center p-4 bg-white bg-opacity-30 border border-blue-600 rounded-lg shadow-lg 
-                hover:bg-opacity-50 transition-all duration-300 backdrop-blur-sm
-                hover:shadow-inner hover:border-black hover:scale-[0.95]"
+                hover:bg-opacity-50 transition-all duration-300 
+                hover:shadow-outer hover:border-black "
             >
               <img
                 src={skill.svgPath}
                 alt={`${skill.name} logo`}
-                className="w-12 h-12 sm:w-14 sm:h-14 object-contain mb-2"
+                className="w-12 h-12 sm:w-14 sm:h-14 object-contain mb-2 "
               />
-              <h1 className="text-xs sm:text-base text-black font-medium text-center font-poppins">
+              <h1 className="text-xs sm:text-base text-black font-medium text-center font-poppins ">
                 {skill.name}
               </h1>
             </motion.div>
