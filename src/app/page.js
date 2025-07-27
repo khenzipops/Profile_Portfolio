@@ -37,24 +37,24 @@ export default function Home() {
         <ProjectCard />
       </div>
       <div id="TechnicalSkills" ref={skillsRef}>
-        <div className=" p-5 m-3 border-t-2 border-gray-200 my-6">
+        <div className=" p-5 m-3  border-gray-200 my-6">
           <TechnicalSkills />
         </div>
       </div>
       {/* <div id="TechnicalSkills" ref={skillsRef}>
-        <div className=" p-5 m-3 border-t-2 border-gray-200 my-6">
+        <div className=" p-5 m-3  border-gray-200 my-6">
           <Figma />
         </div>
       </div> */}
 
-      <div className="m-3 border-t-2 border-gray-200 my-6 ">
+      <div className="m-3 border-gray-200 my-6 ">
         <Education />
       </div>
 
       <div
         id="contact"
         ref={contactRef}
-        className="p-5 m-3 border-t-2 border-gray-200 my-6"
+        className="p-5 m-3 border-gray-200 my-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-42 gap-4 items-center">
           <div className="p-2 text-5xl text-gray-300 font-roboto mt-3">
