@@ -120,9 +120,8 @@ function ProjectCard() {
               initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? 50 : 0 }}
               animate={controls}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="flex flex-col bg-white bg-opacity-90 border border-blue-500 rounded-lg shadow-md 
-              md:flex-row md:h-72  
-              hover:shadow-outer hover:border-black"
+              className="flex flex-col bg-white bg-opacity-90 border border-blue-500 rounded-lg
+              md:flex-row md:h-72 hover:border-black"
             >
               {/* Image + Button */}
               <div className="md:w-1/3 flex flex-col group p-2">
