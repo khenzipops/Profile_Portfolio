@@ -35,7 +35,7 @@ export default function Cover() {
   }, [isRightInView, rightControls, isHydrated]);
 
   return (
-    <div className="w-full p-4 space-y-6 border-b-2">
+    <div className="w-full p-4 space-y-6 ">
       {/* Header */}
       <motion.h1
         initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? -20 : 0 }}
