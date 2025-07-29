@@ -41,7 +41,7 @@ const SkillItem = ({ skill, index, isHydrated }) => {
     <motion.div
       ref={ref}
       initial={isHydrated ? { opacity: 0, y: 30 } : { opacity: 1 }}
-      className="flex flex-col items-center justify-center h-40 w-40 bg-white bg-opacity-30 border border-blue-600 rounded-lg
+      className="flex flex-col items-center justify-center h-32 w-32 bg-white bg-opacity-30 border border-blue-600 rounded-lg
                 hover:bg-opacity-50 transition-all duration-300 hover:border-black"
     >
       <img
@@ -72,7 +72,7 @@ export default function TechnicalSkills() {
         </h1>
       </motion.div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 p-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 lg:p-8">
         {skills.map((skill, index) => (
           <SkillItem
             key={index}
