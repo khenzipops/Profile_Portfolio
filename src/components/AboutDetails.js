@@ -1,134 +1,65 @@
-// src/components/Details.js
 "use client";
 import { useState } from "react";
+import Details from "@/components/Details";
+import ProjectCard from "@/components/ProjectCard";
 
-export default function Cover({ isOpen, onClose }) {
-  if (!isOpen) return null;
+export default function Cover() {
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="p-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-blue-600">About Me</h2>
-            <button
-              onClick={onClose}
-              className="text-gray-500 hover:text-gray-700"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+    <main className=" bg-white text-gray-800">
+      {/* Hero Section */}
+      <section className="w-full px-4 py-12 md:py-20 ">
+        <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
+          {/* Text Section */}
+          <div className="w-full lg:w-1/2 space-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-blue-600">
+              Hi, I'm <span className="text-gray-800">Kenneth G. Popera</span>
+            </h1>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+              A passionate Frontend Developer from Cagayan de Oro City. I build
+              user-friendly and responsive web applications using Next.js,
+              Tailwind CSS, and Express.js.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+              I hold a degree in BS Information Technology from USTP. I love
+              turning complex problems into elegant, clean designs — always
+              eager to learn and grow.
+            </p>
+            <div className="flex flex-wrap gap-4 mt-6">
+              <button
+                onClick={() => setIsDetailOpen(true)}
+                className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Education</h3>
-              <p className="text-gray-700">
-                Bachelor of Science in Information Technology
-              </p>
-              <p className="text-gray-600">
-                University of Science and Technology of Southern Philippines
-                (USTP)
-              </p>
-              <p className="text-gray-600">2018 - 2022</p>
+                View More Details
+              </button>
+              <a
+                href="#projects"
+                className="inline-block border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition"
+              >
+                View Projects
+              </a>
             </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Experience</h3>
-              <div className="space-y-3">
-                <div>
-                  <h4 className="font-medium">Frontend Developer</h4>
-                  <p className="text-gray-600">
-                    Tech Solutions Inc. | 2022 - Present
-                  </p>
-                  <p className="text-gray-700">
-                    Developing responsive web applications using React, Next.js,
-                    and Tailwind CSS.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium">Junior Web Developer</h4>
-                  <p className="text-gray-600">
-                    Digital Innovations PH | 2021 - 2022
-                  </p>
-                  <p className="text-gray-700">
-                    Worked on various client projects implementing modern web
-                    technologies.
-                  </p>
-                </div>
+            <Details
+              isOpen={isDetailOpen}
+              onClose={() => setIsDetailOpen(false)}
+            />
+          </div>
+          {/* Profile Image Section */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="relative">
+              <img
+                src="/assets/Portfolio.png"
+                alt="Khenz profile"
+                className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-blue-500 shadow-xl"
+              />
+              <div className="absolute bottom-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                Available for work
               </div>
             </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  React
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  Next.js
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  TypeScript
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  Tailwind CSS
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  JavaScript
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  HTML/CSS
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  Node.js
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  Express.js
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  Git
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  UI/UX Design
-                </span>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-2">
-                Contact Information
-              </h3>
-              <p className="text-gray-700">Email: kenneth.popera@example.com</p>
-              <p className="text-gray-700">Phone: +63 912 345 6789</p>
-              <p className="text-gray-700">
-                Location: Cagayan de Oro City, Philippines
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 flex justify-end">
-            <button
-              onClick={onClose}
-              className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
-            >
-              Close
-            </button>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
