@@ -1,103 +1,80 @@
 "use client";
-
-import { useState, useRef, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useState } from "react";
 import Details from "@/components/Details";
-import { useHydrated, useInViewWithHydration } from "@/hooks/useinView";
 
 export default function Cover() {
   const [isDetailOpen, setIsDetailOpen] = useState(false);
-  const isHydrated = useHydrated();
-
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
-
-  const leftControls = useAnimation();
-  const rightControls = useAnimation();
-
-  const isLeftInView = useInViewWithHydration(leftRef, { margin: "-50px" });
-  const isRightInView = useInViewWithHydration(rightRef, { margin: "-50px" });
-
-  useEffect(() => {
-    if (isHydrated && isLeftInView) {
-      leftControls.start({ opacity: 1, x: 0 });
-    } else if (isHydrated) {
-      leftControls.start({ opacity: 0, x: -50 });
-    }
-  }, [isLeftInView, leftControls, isHydrated]);
-
-  useEffect(() => {
-    if (isHydrated && isRightInView) {
-      rightControls.start({ opacity: 1, x: 0 });
-    } else if (isHydrated) {
-      rightControls.start({ opacity: 0, x: 50 });
-    }
-  }, [isRightInView, rightControls, isHydrated]);
 
   return (
-    <div className="w-full p-4 space-y-6 ">
-      {/* Header */}
-      <motion.h1
-        initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? -20 : 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-2xl sm:text-3xl lg:text-5xl text-blue-400 font-bold font-poppins text-center lg:text-left"
-      >
-        About Me
-      </motion.h1>
-
-      {/* Main Content */}
-      <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-4">
-        {/* Left Side Text */}
-        <motion.div
-          ref={leftRef}
-          initial={{ opacity: isHydrated ? 0 : 1, x: isHydrated ? -50 : 0 }}
-          animate={leftControls}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex items-start justify-center lg:justify-start mt-8 lg:mt-0 px-2"
-        >
-          <div className="max-w-xl">
+    <main className="min-h-screen bg-white text-gray-800">
+      {/* Hero Section */}
+      <section className="w-full px-4 py-12 md:py-20 ">
+        <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
+          {/* Text Section */}
+          <div className="w-full lg:w-1/2 space-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-blue-600">
+              Hi, I'm <span className="text-gray-800">Kenneth G. Popera</span>
+            </h1>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+              A passionate Frontend Developer from Cagayan de Oro City. I build
+              user-friendly and responsive web applications using Next.js,
+              Tailwind CSS, and Express.js.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+              I hold a degree in BS Information Technology from USTP. I love
+              turning complex problems into elegant, clean designs — always
+              eager to learn and grow.
+            </p>
+            <div className="flex flex-wrap gap-4 mt-6">
+              <button
+                onClick={() => setIsDetailOpen(true)}
+                className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
+              >
+                View More Details
+              </button>
+              <a
+                href="#projects"
+                className="inline-block border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition"
+              >
+                View Projects
+              </a>
+            </div>
             <Details
               isOpen={isDetailOpen}
               onClose={() => setIsDetailOpen(false)}
             />
-            <p className="font-bold text-blue-500 text-base sm:text-xl md:text-3xl text-justify pb-2">
-              I'm{" "}
-              <span className="bg-blue-500 p-1 hover:bg-blue-800 rounded-full text-white pr-8">
-                Khenz
-              </span>
-            </p>
-            <p className="text-sm sm:text-base font-poppins text-justify pb-2">
-              I'm a Frontend Developer from Cagayan de Oro City with experience
-              in Next.js and Vite. I specialize in building responsive and
-              functional web applications using Next.js, Tailwind CSS, and
-              Express.js, with MongoDB for backend support.
-            </p>
-            <p className="text-sm sm:text-base font-poppins text-justify">
-              I graduated with a BS in Information Technology from the
-              University of Science and Technology of Southern Philippines. I'm
-              passionate about creating clean, user-friendly web experiences and
-              currently focused on building simple projects to expand my skills
-              and knowledge.
-            </p>
           </div>
-        </motion.div>
+          {/* Profile Image Section */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="relative">
+              <img
+                src="/assets/Portfolio.png"
+                alt="Khenz profile"
+                className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-blue-500 shadow-xl"
+              />
+              <div className="absolute bottom-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                Available for work
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        {/* Right Side Image */}
-        <motion.div
-          ref={rightRef}
-          initial={{ opacity: isHydrated ? 0 : 1, x: isHydrated ? 50 : 0 }}
-          animate={rightControls}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="flex justify-center items-center mt-8 lg:mt-0"
-        >
-          <img
-            src="/assets/Portfolio.png"
-            alt="profile-image"
-            className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full shadow-lg border-2 border-blue-500 object-cover"
-          />
-        </motion.div>
-      </div>
-    </div>
+      {/* Contact Section */}
+      <section className="w-full px-4 py-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
+          <p className="text-lg mb-8">
+            I'm always interested in new opportunities and collaborations.
+          </p>
+          <a
+            href="mailto:khenz@example.com"
+            className="inline-block bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition"
+          >
+            Send me an email
+          </a>
+        </div>
+      </section>
+    </main>
   );
 }
