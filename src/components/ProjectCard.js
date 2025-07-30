@@ -148,8 +148,7 @@ function ProjectCard() {
                     <img
                       src={project.image}
                       alt={project.alt}
-                      className="w-full h-full object-cover transition-all duration-500
-                      group-hover:scale-105 aspect-[16/9] md:aspect-square"
+                      className="w-full h-full object-contain transition-all duration-500 aspect-[16/9] md:aspect-square"
                       loading="lazy"
                     />
                   </div>
