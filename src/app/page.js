@@ -9,7 +9,6 @@ import AboutDetails from "@/components/AboutDetails";
 import Contact from "@/components/Contact";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footers";
-import Cover from "@/components/Cover";
 import Education from "@/components/Education";
 // import Divider from "@/components/Divider";
 // import Figma from "@/components/figma-folder/figma";
@@ -22,14 +21,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div id="/" className=" h-screen">
-        <Cover />
-      </div>
-
       <div className="p-5 m-3 ">
         <AboutDetails />
       </div>
-
       <div id="bio" ref={bioRef} className="">
         {/* <Divider /> */}
       </div>
