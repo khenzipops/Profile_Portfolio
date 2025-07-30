@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
 import Details from "@/components/Details";
-import ProjectCard from "@/components/ProjectCard";
-
 export default function Cover() {
   const [isDetailOpen, setIsDetailOpen] = useState(false);
 
@@ -14,7 +12,7 @@ export default function Cover() {
           {/* Text Section */}
           <div className="w-full lg:w-1/2 space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-blue-600">
-              Hi, I'm <span className="text-gray-800">Kenneth G. Popera</span>
+              Hi, I'm <span className="text-gray-800">Kenneth</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
               A passionate Frontend Developer from Cagayan de Oro City. I build
@@ -37,7 +35,7 @@ export default function Cover() {
                 href="#projects"
                 className="inline-block border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition"
               >
-                View Projects
+                View Figma Projects
               </a>
             </div>
             <Details
@@ -51,10 +49,11 @@ export default function Cover() {
               <img
                 src="/assets/Portfolio.png"
                 alt="Khenz profile"
-                className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-blue-500 shadow-xl"
+                className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-2 border-blue-500 "
               />
-              <div className="absolute bottom-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                Available for work
+              <div className="absolute bottom-4 right-4 bg-white border border-blue-500 text-black px-3 py-1 rounded-full text-sm font-medium flex items-center">
+                <div className="h-2 w-2 rounded-full bg-green-600 mr-2"></div>
+                <span>Available for work</span>
               </div>
             </div>
           </div>
