@@ -32,7 +32,7 @@ export default function Cover() {
                 View More Details
               </button>
               <a
-                href="#projects"
+                href="https://www.figma.com/design/t6hbGBcTpSj7gkbhz6M4Hn/ALL-PROJECT?node-id=0-6&p=f&t=8jEISDZ0YOZcvrtm-0"
                 className="inline-block border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-600 hover:text-white transition"
               >
                 View Figma Projects
