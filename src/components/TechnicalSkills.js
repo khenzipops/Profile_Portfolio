@@ -41,7 +41,7 @@ const SkillItem = ({ skill, index, isHydrated }) => {
     <motion.div
       ref={ref}
       initial={isHydrated ? { opacity: 0, y: 30 } : { opacity: 1 }}
-      className="flex flex-col items-center justify-center h-32 w-32 bg-white bg-opacity-30 border border-blue-600 rounded-lg
+      className="flex flex-col items-center justify-center h-32 w- bg-white bg-opacity-30 border border-blue-600 rounded-lg
                 hover:bg-opacity-50 transition-all duration-300 hover:border-black"
     >
       <img

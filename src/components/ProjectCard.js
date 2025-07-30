@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useHydrated, useInViewWithHydration } from "@/hooks/useinView";
+import { FaBootstrap } from "react-icons/fa";
 
 const projects = [
   {
@@ -13,72 +14,71 @@ const projects = [
     link: "https://kyshr.github.io/fast-trace/#/",
     target: "_blank",
     rel: "noopener noreferrer",
-    titlelink: "Visit",
-    svgPath: "/assets/reactjs.svg",
-    imgicon: "/asstes/nextjs.svg",
+    technologies: ["React", "Bootstrap", "JavaScript", "Express Js", "MongoDB"],
   },
   {
     title: "ToDo",
     description:
       "Project where I practice Create , Read, Update, Delete operations using Vite, Tailwindcss and TypeScript",
     image: "/assets/Todo.png",
-    alt: "Vtracer Logo",
+    alt: "Todo App",
     link: "https://todo-list-c0fh.onrender.com/",
     target: "_blank",
     rel: "noopener noreferrer",
-    titlelink: "Visit",
-    svgPath: "/assets/nextJS.svg",
+    technologies: ["Vite", "TailwindCSS", "JavaScript"],
   },
-  // {
-  //   title: "Climbs",
-  //   description:
-  //     "This project was recreated from scratch after deletion, as part of optimizing the original version provided during my OJT at Climbs.",
-  //   image: "/assets/Climbs.png",
-  //   alt: "Vtracer Logo",
-  //   link: "https://kyshr.github.io/fast-trace/#/",
-  //   target: "_blank",
-  //   rel: "noopener noreferrer",
-  //   titlelink: "Visit",
-  //   svgPath: "/assets/nextJS.svg",
-  //   className: "cursor-not-allowed",
-  // },
   {
     title: "Maturity Coconut App Detector",
     description:
-      "Our group created a mobile app that detects the maturity of coconuts using the phone camera and machine learning. The app analyzes the image and tells whether the coconut is young, mature, or overripe.",
+      "Our group created a mobile app that detects the maturity of coconuts using the phone camera and machine learning.",
     image: "/assets/coconut.png",
-    alt: "Vtracer Logo",
+    alt: "Coconut App",
     link: "https://drive.google.com/file/d/1FzDpzsdyRmI9G1NmI4EvxHtqf6cpLgVo/view",
     target: "_blank",
     rel: "noopener noreferrer",
-    titlelink: "Visit",
-    svgPath: "/assets/nextJS.svg",
+    technologies: ["Python", "Flutter"],
   },
   {
     title: "Campus Security Portal",
     description:
       "During my college days, our team collaborated to develop projects, and for the Campus Security Portal, I was assigned to create the front-end.",
     image: "/assets/campus-security-portal.png",
-    alt: "Vtracer Logo",
+    alt: "Security Portal",
     link: "https://campus-security-portal-alpha.vercel.app/guard/login",
     target: "_blank",
     rel: "noopener noreferrer",
-    titlelink: "Visit",
-    svgPath: "/assets/nextJS.svg",
+    technologies: ["Vite", "Express Js", "MongoDB", "TailwindCSS"],
   },
   {
     title: "UI DESIGN",
     description: "Simple project for User Interface Design.",
-
     image: "/assets/marci-metzger.png",
-    alt: "Vtracer Logo",
+    alt: "UI Design",
     link: "https://marci-metzger-two.vercel.app/",
     target: "_blank",
     rel: "noopener noreferrer",
-    titlelink: "Visit",
-    svgPath: "/assets/next.svg",
+    technologies: ["Nextjs", "TailwindCSS"],
   },
 ];
+
+const techIcons = {
+  React: "/assets/reactjs.svg",
+  Nextjs: "/assets/nextJS.svg",
+  HTML: "/assets/html.svg",
+  CSS: "/assets/css_3.svg",
+  JavaScript: "/assets/javascript.svg",
+  TypeScript: "/assets/typescript.svg",
+  Python: "/assets/python.svg",
+  MongoDB: "/assets/mongodb-svgrepo.svg",
+  TailwindCSS: "/assets/tailwindcss.svg",
+  Vite: "/assets/Vite.svg",
+  "Express Js": "/assets/express-js.svg",
+  Firebase: "/assets/firebase.svg",
+  TensorFlow: "/assets/tensorflow.svg",
+  Figma: "/assets/figma-svgrepo-com.svg",
+  Flutter: "/assets/flutter-svgrepo-com.svg",
+  Bootstrap: "/assets/bootstrap-svgrepo-com.svg",
+};
 
 function ProjectCard() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -91,6 +91,21 @@ function ProjectCard() {
   const closeModal = () => {
     setSelectedImage(null);
   };
+
+  const TechIcon = ({ name }) => {
+    const iconPath = techIcons[name] || "/assets/default.svg";
+    return (
+      <div className="flex flex-col items-center mx-1">
+        <img
+          src={iconPath}
+          alt={`${name} icon`}
+          className="w-6 h-6 object-contain"
+        />
+        <span className="text-xs text-gray-600 mt-1">{name}</span>
+      </div>
+    );
+  };
+
   return (
     <div>
       <div className="p-2 text-gray-300 font-roboto mt-3 font-semibold">
@@ -98,8 +113,7 @@ function ProjectCard() {
           Project
         </h1>
       </div>
-
-      <div className="grid lg:grid-cols-2 gap-4 p-4 md:p-10">
+      <div className="grid lg:grid-cols-2 gap-6 p-4 md:p-10">
         {projects.map((project, index) => {
           const ref = useRef(null);
           const controls = useAnimation();
@@ -121,10 +135,10 @@ function ProjectCard() {
               animate={controls}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="flex flex-col bg-white bg-opacity-90 border border-blue-500 rounded-lg
-              md:flex-row md:h-72 hover:border-black"
+              md:flex-row md:h-72 hover:border-black transition-all duration-300"
             >
               {/* Image + Button */}
-              <div className="md:w-1/3 flex flex-col group p-2">
+              <div className="md:w-1/3 flex flex-col group p-3">
                 {project.image && (
                   <div
                     className="w-full h-48 md:h-3/4 overflow-hidden rounded-t-lg md:rounded-none md:rounded-l-lg
@@ -140,30 +154,38 @@ function ProjectCard() {
                     />
                   </div>
                 )}
-
                 <a
                   href={project.link}
                   target={project.target}
                   rel={project.rel}
-                  className="text-center items-center before:ease relative h-7 w-full overflow-hidden 
-                  border border-blue-800 text-black shadow-2xl transition-all before:absolute before:top-1/2 
-                  before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-blue-500 
-                  before:duration-300 hover:text-white hover:shadow-blue-500 hover:before:h-64 
-                  hover:before:-translate-y-32 mt-2 rounded-md"
+                  className="text-center mt-4 px-6 py-2 bg-blue-500 text-white rounded-md
+                  hover:bg-blue-600 transition-colors duration-300 font-medium flex items-center justify-center"
                 >
-                  <span className="relative z-10">{project.titlelink}</span>
+                  <span className="text-base">Visit</span>
                 </a>
               </div>
 
               {/* Text Content */}
-              <div className="flex flex-col justify-between p-4 w-full md:w-2/3 group shadow">
+              <div className="flex flex-col justify-between p-5 w-full md:w-2/3 group">
                 <div>
                   <h2 className="text-xl font-extrabold text-center md:text-left text-gray-800 transition-colors duration-300 group-hover:text-blue-700 font-poppins">
                     {project.title}
                   </h2>
-                  <p className="mt-2 text-sm md:text-base text-black overflow-y-auto max-h-40 transition-colors duration-800 group-hover:text-black font-poppins text-justify">
+                  <p className="mt-3 text-sm md:text-base text-black overflow-y-auto max-h-40 transition-colors duration-800 group-hover:text-black font-poppins text-justify">
                     {project.description}
                   </p>
+                </div>
+
+                {/* Technology Icons Section */}
+                <div className="mt-4">
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">
+                    Technologies:
+                  </h3>
+                  <div className="flex flex-wrap justify-start">
+                    {project.technologies.map((tech, techIndex) => (
+                      <TechIcon key={techIndex} name={tech} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
