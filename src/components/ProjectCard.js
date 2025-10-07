@@ -1,31 +1,38 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useHydrated, useInViewWithHydration } from "@/hooks/useinView";
-import { FaBootstrap } from "react-icons/fa";
 
+// Project data
 const projects = [
+  {
+    title: "LMS Vianna",
+    description:
+      "LMS Vianna is a review center platform that allows users to take quizzes anytime and anywhere, with the option to pause and resume whenever they are ready to focus again. As the Frontend Developer, I designed and built an intuitive and responsive user interface that makes quiz creation convenient for administrators and provides a smooth experience for reviewers preparing for their exams.",
+    image: "/assets/lms.png",
+    alt: "Vtrace Logo",
+    link: "https://lms-frontend-koti.onrender.com/",
+    technologies: ["Nextjs", "TypeScript", "Python", "Mariadb"],
+  },
+  {
+    title: "VA Realty",
+    description:
+      "VAREALTY is a real estate platform built to help agents confidently buy, sell, and rent properties while ensuring their income is secure and transparent — and as the Frontend Developer, my role is to design and develop an intuitive, high-performing interface that empowers agents to manage listings, track deals, and grow their business efficiently.",
+    image: "/assets/varealty.png",
+    alt: "Vtrace Logo",
+    link: "https://va-realty-system-frontend.onrender.com/",
+    technologies: ["Nextjs", "TypeScript", "Python", "Mariadb"],
+  },
   {
     title: "Vtrace",
     description:
-      "I worked as a UI designer for a group contact tracing website project in college, creating an intuitive and user-friendly design.",
+      "Vtrace, short for Virus Trace, is a website system developed during the pandemic to help with efficient and accurate contact tracing, specifically serving clients in Camiguin. The platform was designed to track potential virus exposure and assist local health authorities in monitoring and managing cases effectively. I was assigned to handle the user interface of the system, focusing on creating a clean, responsive, and user-friendly design that made it easy for users to input and access essential health data. Through this project, I contributed to improving the system’s usability and supporting Camiguin’s efforts in maintaining public health safety.",
     image: "/assets/VTrace.png",
-    alt: "Vtracer Logo",
+    alt: "Vtrace Logo",
     link: "https://kyshr.github.io/fast-trace/#/",
-    target: "_blank",
-    rel: "noopener noreferrer",
-    technologies: ["React", "Bootstrap", "JavaScript", "Express Js", "MongoDB"],
-  },
-  {
-    title: "ToDo",
-    description:
-      "Project where I practice Create , Read, Update, Delete operations using Vite, Tailwindcss and TypeScript",
-    image: "/assets/Todo.png",
-    alt: "Todo App",
-    link: "https://todo-list-c0fh.onrender.com/",
-    target: "_blank",
-    rel: "noopener noreferrer",
-    technologies: ["Vite", "TailwindCSS", "JavaScript"],
+    technologies: ["React", "Bootstrap", "JavaScript", "ExpressJs", "MongoDB"],
   },
   {
     title: "Maturity Coconut App Detector",
@@ -34,8 +41,6 @@ const projects = [
     image: "/assets/coconut.png",
     alt: "Coconut App",
     link: "https://drive.google.com/file/d/1FzDpzsdyRmI9G1NmI4EvxHtqf6cpLgVo/view",
-    target: "_blank",
-    rel: "noopener noreferrer",
     technologies: ["Python", "Flutter"],
   },
   {
@@ -45,9 +50,16 @@ const projects = [
     image: "/assets/campus-security-portal.png",
     alt: "Security Portal",
     link: "https://campus-security-portal-alpha.vercel.app/guard/login",
-    target: "_blank",
-    rel: "noopener noreferrer",
-    technologies: ["Vite", "Express Js", "MongoDB", "TailwindCSS"],
+    technologies: ["Vite", "ExpressJs", "MongoDB", "TailwindCSS"],
+  },
+  {
+    title: "ToDo",
+    description:
+      "Project where I practice Create, Read, Update, Delete operations using Vite, TailwindCSS, and TypeScript.",
+    image: "/assets/Todo.png",
+    alt: "Todo App",
+    link: "https://todo-list-c0fh.onrender.com/",
+    technologies: ["Vite", "TailwindCSS", "JavaScript"],
   },
   {
     title: "UI DESIGN",
@@ -55,12 +67,11 @@ const projects = [
     image: "/assets/marci-metzger.png",
     alt: "UI Design",
     link: "https://marci-metzger-two.vercel.app/",
-    target: "_blank",
-    rel: "noopener noreferrer",
     technologies: ["Nextjs", "TailwindCSS"],
   },
 ];
 
+// Icon paths
 const techIcons = {
   React: "/assets/reactjs.svg",
   Nextjs: "/assets/nextJS.svg",
@@ -72,124 +83,125 @@ const techIcons = {
   MongoDB: "/assets/mongodb-svgrepo.svg",
   TailwindCSS: "/assets/tailwindcss.svg",
   Vite: "/assets/Vite.svg",
-  "Express Js": "/assets/express-js.svg",
-  Firebase: "/assets/firebase.svg",
-  TensorFlow: "/assets/tensorflow.svg",
-  Figma: "/assets/figma-svgrepo-com.svg",
+  ExpressJs: "/assets/express-js.svg",
   Flutter: "/assets/flutter-svgrepo-com.svg",
   Bootstrap: "/assets/bootstrap-svgrepo-com.svg",
+  Mariadb: "/assets/mariadb.svg",
 };
 
-function ProjectCard() {
+// Renders one tech icon
+const TechIcon = ({ name }) => {
+  const iconPath = techIcons[name] || "/assets/default.svg";
+  return (
+    <div className="flex flex-col items-center mx-2">
+      <Image
+        src={iconPath}
+        alt={name}
+        width={24}
+        height={24}
+        className="object-contain hover: "
+      />
+      <span className="text-xs text-gray-600 mt-1">{name}</span>
+    </div>
+  );
+};
+
+// Handles one project item (hooks live here)
+function ProjectItem({ project, isEven, isHydrated, onImageClick }) {
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const inView = useInViewWithHydration(ref, { margin: "-50px" });
+
+  useEffect(() => {
+    if (isHydrated && inView) {
+      controls.start({ opacity: 1, y: 0 });
+    } else if (isHydrated) {
+      controls.start({ opacity: 0, y: 50 });
+    }
+  }, [inView, controls, isHydrated]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? 50 : 0 }}
+      animate={controls}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={`flex flex-col md:flex-row items-center bg-white/90 border-none rounded-xl transition-all duration-500 ${
+        !isEven ? "md:flex-row-reverse" : ""
+      }`}
+    >
+      {/* Image Section */}
+      <div className="md:w-1/2 p-4 flex flex-col items-center">
+        <div
+          className="w-full h-56 md:h-72 rounded-lg overflow-hidden cursor-pointer border"
+          onClick={() => onImageClick(project.image)}
+        >
+          <Image
+            src={project.image}
+            alt={project.alt}
+            width={500}
+            height={400}
+            className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-32 mt-4 text-center bg-blue-500 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-600 transition"
+        >
+          Visit
+        </a>
+      </div>
+
+      {/* Info Section */}
+      <div className="md:w-1/2 p-6">
+        <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center md:text-left">
+          {project.title}
+        </h2>
+        <p className="text-gray-700 text-sm md:text-base text-justify mb-4">
+          {project.description}
+        </p>
+
+        <div>
+          <h3 className="text-sm font-semibold text-gray-700 mb-2">
+            Technologies:
+          </h3>
+          <div className="flex flex-wrap justify-center md:justify-start">
+            {project.technologies.map((tech, i) => (
+              <TechIcon key={i} name={tech} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+// Main component
+export default function ProjectCard() {
   const [selectedImage, setSelectedImage] = useState(null);
   const isHydrated = useHydrated();
 
-  const openModal = (image) => {
-    setSelectedImage(image);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
-  const TechIcon = ({ name }) => {
-    const iconPath = techIcons[name] || "/assets/default.svg";
-    return (
-      <div className="flex flex-col items-center mx-1">
-        <img
-          src={iconPath}
-          alt={`${name} icon`}
-          className="w-6 h-6 object-contain"
-        />
-        <span className="text-xs text-gray-600 mt-1">{name}</span>
-      </div>
-    );
-  };
+  const openModal = (image) => setSelectedImage(image);
+  const closeModal = () => setSelectedImage(null);
 
   return (
-    <div>
-      <div className="p-2 text-gray-300 font-roboto mt-3 font-semibold">
-        <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-bold">
-          Project
-        </h1>
-      </div>
-      <div className="grid lg:grid-cols-2 gap-6 p-4 md:p-10">
-        {projects.map((project, index) => {
-          const ref = useRef(null);
-          const controls = useAnimation();
-          const inView = useInViewWithHydration(ref, { margin: "-50px" });
+    <section className="py-10">
+      <h1 className="text-3xl md:text-4xl font-bold text-blue-400 mb-10 ">
+        Projects
+      </h1>
 
-          useEffect(() => {
-            if (isHydrated && inView) {
-              controls.start({ opacity: 1, y: 0 });
-            } else if (isHydrated) {
-              controls.start({ opacity: 0, y: 50 });
-            }
-          }, [inView, controls, isHydrated]);
-
-          return (
-            <motion.div
-              key={index}
-              ref={ref}
-              initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? 50 : 0 }}
-              animate={controls}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="flex flex-col bg-white bg-opacity-90 border border-blue-500 rounded-lg
-              md:flex-row md:h-72 hover:border-black transition-all duration-300"
-            >
-              {/* Image + Button */}
-              <div className="md:w-1/3 flex flex-col group p-3">
-                {project.image && (
-                  <div
-                    className="w-full h-48 md:h-3/4 overflow-hidden rounded-t-lg md:rounded-none md:rounded-l-lg
-                    group-hover:shadow-inner cursor-pointer"
-                    onClick={() => openModal(project.image)}
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.alt}
-                      className="w-full h-full object-contain transition-all duration-500 aspect-[16/9] md:aspect-square"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <a
-                  href={project.link}
-                  target={project.target}
-                  rel={project.rel}
-                  className="text-center mt-4 px-6 py-2 bg-blue-500 text-white rounded-md
-                  hover:bg-blue-600 transition-colors duration-300 font-medium flex items-center justify-center"
-                >
-                  <span className="text-base">Visit</span>
-                </a>
-              </div>
-
-              {/* Text Content */}
-              <div className="flex flex-col justify-between p-5 w-full md:w-2/3 group">
-                <div>
-                  <h2 className="text-xl font-extrabold text-center md:text-left text-gray-800 transition-colors duration-300 group-hover:text-blue-700 font-poppins">
-                    {project.title}
-                  </h2>
-                  <p className="mt-3 text-sm md:text-base text-black overflow-y-auto max-h-40 transition-colors duration-800 group-hover:text-black font-poppins text-justify">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Technology Icons Section */}
-                <div className="mt-4">
-                  <h3 className="text-sm font-semibold text-gray-700 mb-2">
-                    Technologies:
-                  </h3>
-                  <div className="flex flex-wrap justify-start">
-                    {project.technologies.map((tech, techIndex) => (
-                      <TechIcon key={techIndex} name={tech} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          );
-        })}
+      <div className="flex flex-col space-y-12">
+        {projects.map((project, index) => (
+          <ProjectItem
+            key={index}
+            project={project}
+            isEven={index % 2 === 0}
+            isHydrated={isHydrated}
+            onImageClick={openModal}
+          />
+        ))}
       </div>
 
       {/* Modal */}
@@ -198,27 +210,29 @@ function ProjectCard() {
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
           onClick={closeModal}
         >
-          <div
+          <motion.div
             className="relative max-w-4xl w-full"
             onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
           >
-            <img
+            <Image
               src={selectedImage}
               alt="Enlarged view"
-              className="max-h-[90vh] w-full object-contain"
+              width={1200}
+              height={800}
+              className="max-h-[90vh] w-full object-contain border-none rounded-lg"
             />
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 bg-black bg-opacity-50 text-white hover:text-red-700 text-3xl rounded-full w-10 h-10 flex items-center justify-center"
-              aria-label="Close modal"
+              className="absolute top-4 right-4 bg-black bg-opacity-60 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center hover:text-red-500"
             >
               &times;
             </button>
-          </div>
+          </motion.div>
         </div>
       )}
-    </div>
+    </section>
   );
 }
-
-export default ProjectCard;

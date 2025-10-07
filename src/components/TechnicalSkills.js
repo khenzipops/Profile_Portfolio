@@ -22,32 +22,40 @@ const skills = [
   { name: "Figma", svgPath: "/assets/figma-svgrepo-com.svg" },
 ];
 
-const SkillItem = ({ skill, index, isHydrated }) => {
-  const ref = useRef(null);
-  const controls = useAnimation();
-  const inView = useInViewWithHydration(ref, { margin: "-50px" });
+// Animation variants
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
 
-  useEffect(() => {
-    if (!isHydrated) return;
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+};
 
-    controls.start({
-      opacity: inView ? 1 : 0,
-      y: inView ? 0 : 30,
-      transition: { duration: 0.4, ease: "easeOut", delay: index * 0.05 },
-    });
-  }, [inView, controls, index, isHydrated]);
-
+const SkillItem = ({ skill }) => {
   return (
     <motion.div
-      ref={ref}
-      initial={isHydrated ? { opacity: 0, y: 30 } : { opacity: 1 }}
-      className="flex flex-col items-center justify-center h-32 w- bg-white bg-opacity-30 border border-blue-600 rounded-lg
-                hover:bg-opacity-50 transition-all duration-300 hover:border-black"
+      variants={itemVariants}
+      className="flex flex-col items-center justify-center h-32 bg-white bg-opacity-30 
+                 border border-blue-600 rounded-lg hover:bg-opacity-50 transition-all duration-300 
+                 hover:border-black shadow-sm hover:shadow-lg"
     >
-      <img
+      <motion.img
         src={skill.svgPath}
         alt={`${skill.name} logo`}
         className="w-12 h-12 sm:w-14 sm:h-14 object-contain mb-2"
+        whileHover={{ scale: 1.15, rotate: 5 }}
+        transition={{ type: "spring", stiffness: 300 }}
       />
       <h1 className="text-xs sm:text-base text-black font-medium text-center font-poppins">
         {skill.name}
@@ -58,30 +66,32 @@ const SkillItem = ({ skill, index, isHydrated }) => {
 
 export default function TechnicalSkills() {
   const isHydrated = useHydrated();
+  const ref = useRef(null);
+  const inView = useInViewWithHydration(ref, { margin: "-50px" });
 
   return (
-    <div>
+    <div ref={ref}>
       <motion.div
         initial={{ opacity: isHydrated ? 0 : 1, y: isHydrated ? -20 : 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-poppins ml-2 font-bold w-full">
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-400 mb-10 ">
           Technical Skills
         </h1>
       </motion.div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 lg:p-8">
+      <motion.div
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 lg:p-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
         {skills.map((skill, index) => (
-          <SkillItem
-            key={index}
-            skill={skill}
-            index={index}
-            isHydrated={isHydrated}
-          />
+          <SkillItem key={index} skill={skill} />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

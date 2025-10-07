@@ -35,11 +35,10 @@ function Education() {
           viewport={{ once: false }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-2xl md:text-3xl lg:text-5xl text-blue-400 font-poppins ml-2 font-bold w-full ">
+          <h1 className="text-3xl md:text-4xl font-bold text-blue-400 mb-10 ">
             Education Journey
           </h1>
         </motion.div>
-        <GraduationCap className="w-8 h-8 md:w-10 md:h-10 text-blue-400" />
       </div>
 
       {/* Education Cards */}

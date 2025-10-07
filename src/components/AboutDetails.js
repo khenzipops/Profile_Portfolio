@@ -17,13 +17,9 @@ export default function Cover() {
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
               A passionate Frontend Developer from Cagayan de Oro City. I build
               user-friendly and responsive web applications using Next.js,
-              Tailwind CSS, and Express.js.
+              Tailwind CSS, Nodejs and Express.js.
             </p>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              I hold a degree in BS Information Technology from USTP. I love
-              turning complex problems into elegant, clean designs — always
-              eager to learn and grow.
-            </p>
+
             <div className="flex flex-wrap gap-4 mt-6">
               <button
                 onClick={() => setIsDetailOpen(true)}
