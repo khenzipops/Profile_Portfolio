@@ -128,7 +128,7 @@ const MobileNavItems = ({ onClose }) => (
     </MobileNavItem>
     <li className="mt-4">
       <Link
-        href="https://drive.google.com/file/d/1S5HUZuroaXVdHBJoaTK_JIUoGwq-7ejE/view"
+        href="https://drive.google.com/file/d/1S5HUZuroaXVdHBJoaTK_JIUoGwq-7ejE/view?usp=drive_link"
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full bg-blue-600 text-white text-center py-2 rounded-lg font-medium"
