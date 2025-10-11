@@ -134,7 +134,7 @@ function ProjectItem({ project, isEven, isHydrated, onImageClick }) {
       {/* Image Section */}
       <div className="md:w-1/2 p-4 flex flex-col items-center">
         <div
-          className="w-full h-56 md:h-72 rounded-lg overflow-hidden cursor-pointer border"
+          className="w-full h-56 md:h-72 rounded-lg overflow-hidden cursor-pointer border border-blue-400"
           onClick={() => onImageClick(project.image)}
         >
           <Image

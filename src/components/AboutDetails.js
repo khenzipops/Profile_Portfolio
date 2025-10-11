@@ -20,7 +20,7 @@ export default function Cover() {
               Tailwind CSS, Nodejs and Express.js.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-6">
+            {/* <div className="flex flex-wrap gap-4 mt-6">
               <button
                 onClick={() => setIsDetailOpen(true)}
                 className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
@@ -33,7 +33,7 @@ export default function Cover() {
               >
                 View Figma Projects
               </a>
-            </div>
+            </div> */}
             <Details
               isOpen={isDetailOpen}
               onClose={() => setIsDetailOpen(false)}

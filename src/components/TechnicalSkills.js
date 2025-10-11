@@ -47,7 +47,7 @@ const SkillItem = ({ skill }) => {
     <motion.div
       variants={itemVariants}
       className="flex flex-col items-center justify-center h-32 bg-white bg-opacity-30 
-                 border border-blue-600 rounded-lg hover:bg-opacity-50 transition-all duration-300 
+                 border border-blue-400 rounded-lg hover:bg-opacity-50 transition-all duration-300 
                  hover:border-black shadow-sm hover:shadow-lg"
     >
       <motion.img
