@@ -37,7 +37,7 @@ const projects = [
   {
     title: "Maturity Coconut App Detector",
     description:
-      "Our group created a mobile app that detects the maturity of coconuts using the phone camera and machine learning.",
+      "Our group developed a mobile application for our thesis that detects the maturity of coconuts using a phone camera and machine learning. The app analyzes images to determine whether a coconut is mature or not based on visual characteristics. I contributed to the project’s design and user interface to ensure ease of use and clarity. This project allowed us to combine technology and agriculture through practical machine learning application.",
     image: "/assets/coconut.png",
     alt: "Coconut App",
     link: "https://drive.google.com/file/d/1FzDpzsdyRmI9G1NmI4EvxHtqf6cpLgVo/view",
@@ -46,7 +46,7 @@ const projects = [
   {
     title: "Campus Security Portal",
     description:
-      "During my college days, our team collaborated to develop projects, and for the Campus Security Portal, I was assigned to create the front-end.",
+      "During my college days, our team collaborated on several projects, including the Campus Security Portal. I was responsible for developing the front-end of the system using modern web technologies. My focus was on creating an intuitive and responsive interface for students and staff. This experience strengthened my skills in teamwork, UI design, and front-end development.",
     image: "/assets/campus-security-portal.png",
     alt: "Security Portal",
     link: "https://campus-security-portal-alpha.vercel.app/guard/login",
@@ -55,7 +55,7 @@ const projects = [
   {
     title: "ToDo",
     description:
-      "Project where I practice Create, Read, Update, Delete operations using Vite, TailwindCSS, and TypeScript.",
+      "This project is a To-Do application where I practiced implementing Create, Read, Update, and Delete (CRUD) operations. It was built using Vite, TailwindCSS, and TypeScript to ensure fast performance and type safety. The app allows users to add, edit, and remove tasks with a simple and responsive design. It helped me strengthen my skills in handling state management and component-based development.",
     image: "/assets/Todo.png",
     alt: "Todo App",
     link: "https://todo-list-c0fh.onrender.com/",
@@ -63,7 +63,8 @@ const projects = [
   },
   {
     title: "UI DESIGN",
-    description: "Simple project for User Interface Design.",
+    description:
+      "This project focuses on User Interface Design using Next.js and TailwindCSS. It features a clean and responsive layout aimed at improving the user experience. I also explored integrating maps to display locations interactively within the interface. This project helped me practice front-end design principles and map implementation in a modern web framework.",
     image: "/assets/marci-metzger.png",
     alt: "UI Design",
     link: "https://marci-metzger-two.vercel.app/",
