@@ -102,7 +102,7 @@ const NavItem = ({ href, children }) => (
 const ResumeLink = () => (
   <li>
     <Link
-      href="https://drive.google.com/file/d/1HWklQ2wCcYAUPvmMcfgDk8AerpeYul2B/view"
+      href="https://drive.google.com/file/d/1S5HUZuroaXVdHBJoaTK_JIUoGwq-7ejE/view"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block bg-white border border-gray-300 rounded-full px-4 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
@@ -128,7 +128,7 @@ const MobileNavItems = ({ onClose }) => (
     </MobileNavItem>
     <li className="mt-4">
       <Link
-        href="https://drive.google.com/file/d/1S5HUZuroaXVdHBJoaTK_JIUoGwq-7ejE/view?usp=drive_link"
+        href="https://drive.google.com/file/d/1S5HUZuroaXVdHBJoaTK_JIUoGwq-7ejE/view"
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full bg-blue-600 text-white text-center py-2 rounded-lg font-medium"
