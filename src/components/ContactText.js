@@ -56,7 +56,7 @@ export default function ContactText() {
             </li>
             <li className="flex items-center text-gray-700">
               <Phone className="w-5 h-5 mr-3 text-blue-400 flex-shrink-0" />
-              <a href="tel:+1234567890" className="hover:text-blue-400 transition-colors">
+              <a href="tel:+639358567116" className="hover:text-blue-400 transition-colors">
                 (+63) 935-856-7116
               </a>
             </li>
