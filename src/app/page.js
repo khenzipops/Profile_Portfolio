@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import ContactText from "@/components/ContactText";
@@ -10,6 +10,7 @@ import Contact from "@/components/Contact";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footers";
 import Education from "@/components/Education";
+import WorkHistory from "@/components/Workhistory";
 // import Divider from "@/components/Divider";
 // import Figma from "@/components/figma-folder/figma";
 
@@ -17,6 +18,7 @@ export default function Home() {
   const bioRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
+  const [activeSection, setActiveSection] = useState('education');
 
   return (
     <div>
@@ -41,8 +43,45 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className="m-3 border-gray-200 my-6 ">
-        <Education />
+      {/* Toggle Section */}
+      <div className="m-3 border-gray-200 my-6">
+        <div className="flex justify-center mb-8">
+          <div className="bg-gray-100 rounded-lg p-1 inline-flex">
+            <button
+              onClick={() => setActiveSection('education')}
+              className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
+                activeSection === 'education'
+                  ? 'bg-blue-500 text-white shadow-lg'
+                  : 'text-gray-600 hover:text-gray-800'
+              }`}
+            >
+              Education
+            </button>
+            <button
+              onClick={() => setActiveSection('workHistory')}
+              className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
+                activeSection === 'workHistory'
+                  ? 'bg-blue-500 text-white shadow-lg'
+                  : 'text-gray-600 hover:text-gray-800'
+              }`}
+            >
+              Work History
+            </button>
+          </div>
+        </div>
+
+        {/* Conditional Content */}
+        {activeSection === 'education' && (
+          <div className="animate-fadeIn">
+            <Education />
+          </div>
+        )}
+
+        {activeSection === 'workHistory' && (
+          <div className="animate-fadeIn">
+            <WorkHistory />
+          </div>
+        )}
       </div>
 
       <div
@@ -57,15 +96,10 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="p-2 text-5xl text-gray-300 font-roboto mt-3  font-semibold"></div>
-          <div className="flex justify-center">
+        </div>
+        <div className="flex justify-center">
             <ContactText />
           </div>
-
-          <div className="pt-10 p-3">
-            <Contact />
-          </div>
-        </div>
       </div>
       <div>
         <Footer />

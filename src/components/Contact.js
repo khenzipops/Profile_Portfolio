@@ -26,7 +26,7 @@ export default function Contact() {
 
     try {
       const response = await fetch(
-        "https://profile-backend-ashen.vercel.app/api/contact",
+        "https://profile-backend.onrender.com/api/contact",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
